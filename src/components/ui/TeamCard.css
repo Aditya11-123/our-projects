@@ -1,0 +1,168 @@
+/* ── Team Card ─────────────────────────────────────────── */
+.team-card {
+  position: relative;
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-xl) var(--space-lg) var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.team-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--clr-red);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.team-card:hover {
+  border-color: var(--clr-red);
+  box-shadow: 0 8px 32px rgba(225,6,0,0.15);
+  transform: translateY(-4px);
+}
+
+.team-card:hover::before { transform: scaleX(1); }
+
+/* Driver number */
+.team-card__num {
+  position: absolute;
+  top: 8px;
+  right: 14px;
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: rgba(255,255,255,0.04);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  transition: color 0.3s;
+}
+
+.team-card:hover .team-card__num { color: rgba(225,6,0,0.07); }
+
+/* Avatar */
+.team-card__avatar-wrap {
+  position: relative;
+  margin-bottom: var(--space-md);
+}
+
+.team-card__avatar-ring {
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  background: linear-gradient(135deg, var(--clr-red), transparent) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  transition: all 0.3s;
+}
+
+.team-card:hover .team-card__avatar-ring {
+  border-color: var(--clr-red);
+  box-shadow: 0 0 16px var(--clr-red-glow);
+}
+
+.team-card__avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--clr-border);
+  transition: border-color 0.3s;
+}
+
+.team-card:hover .team-card__avatar { border-color: var(--clr-red); }
+
+/* Info */
+.team-card__info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  flex: 1;
+}
+
+.team-card__name {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--clr-text);
+}
+
+.team-card__role {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--clr-red);
+}
+
+.team-card__bio {
+  font-size: 0.82rem;
+  color: var(--clr-text-muted);
+  line-height: 1.5;
+  margin-bottom: var(--space-sm);
+}
+
+/* Skills */
+.team-card__skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  justify-content: center;
+}
+
+.team-card__skill {
+  padding: 0.15rem 0.5rem;
+  font-size: 0.65rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--clr-text-muted);
+  background: var(--clr-surface-2);
+  border: 1px solid var(--clr-border);
+  border-radius: 2px;
+}
+
+/* Socials */
+.team-card__socials {
+  display: flex;
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--clr-border);
+  width: 100%;
+  justify-content: center;
+}
+
+.team-card__socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-sm);
+  color: var(--clr-text-muted);
+  transition: all var(--transition-fast);
+}
+
+.team-card__socials a:hover {
+  color: var(--clr-red);
+  border-color: var(--clr-red);
+  transform: translateY(-2px);
+}

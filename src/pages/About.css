@@ -1,0 +1,137 @@
+/* ── About Page ────────────────────────────────────────── */
+.about-page__header {
+  position: relative;
+  padding: 120px 0 60px;
+  background:
+    radial-gradient(ellipse 60% 80% at 0% 50%, rgba(225,6,0,0.07) 0%, transparent 70%),
+    var(--clr-bg);
+  border-bottom: 1px solid var(--clr-border);
+  overflow: hidden;
+}
+
+.about-page__header-lines {
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      -20deg,
+      transparent,
+      transparent 80px,
+      rgba(255,255,255,0.012) 80px,
+      rgba(255,255,255,0.012) 81px
+    );
+  pointer-events: none;
+}
+
+.about-page__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--clr-red);
+  margin-bottom: var(--space-md);
+}
+
+.about-page__label span {
+  display: inline-block;
+  width: 20px;
+  height: 2px;
+  background: var(--clr-red);
+}
+
+.about-page__sub {
+  color: var(--clr-text-muted);
+  font-size: 1rem;
+  margin-top: var(--space-md);
+}
+
+/* Cards layout */
+.about-page__layout {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-xl);
+}
+
+.about-page__card {
+  position: relative;
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-xl);
+}
+
+.about-page__card-bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--clr-red);
+  border-radius: 2px 0 0 2px;
+}
+
+.about-page__card h2 {
+  margin-bottom: var(--space-md);
+  color: var(--clr-text);
+}
+
+.about-page__card p {
+  color: var(--clr-text-muted);
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+/* Tech List inside About */
+.about-page__tech-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+  border-top: 1px solid var(--clr-border);
+  padding-top: var(--space-xl);
+}
+
+.about-page__tech-group-title {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--clr-red);
+  margin-bottom: var(--space-md);
+}
+
+.about-page__tech-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+/* Global Tech badge styling rule integration */
+.tech-badge {
+  display: inline-flex;
+  padding: 0.2rem 0.5rem;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--clr-text);
+  background: var(--clr-surface-2);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.tech-badge:hover {
+  border-color: var(--clr-red);
+  color: #fff;
+  background: rgba(225,6,0,0.05);
+}
+
+@media (max-width: 768px) {
+  .about-page__layout { grid-template-columns: 1fr; }
+  .about-page__tech-list { grid-template-columns: 1fr; gap: var(--space-lg); }
+}

@@ -1,0 +1,50 @@
+/* ── Team Page ─────────────────────────────────────────── */
+.team-page__header {
+  position: relative;
+  padding: 120px 0 60px;
+  background:
+    radial-gradient(ellipse 60% 80% at 0% 50%, rgba(225,6,0,0.07) 0%, transparent 70%),
+    var(--clr-bg);
+  border-bottom: 1px solid var(--clr-border);
+  overflow: hidden;
+}
+
+.team-page__header-lines {
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      -20deg,
+      transparent,
+      transparent 80px,
+      rgba(255,255,255,0.012) 80px,
+      rgba(255,255,255,0.012) 81px
+    );
+  pointer-events: none;
+}
+
+.team-page__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--clr-red);
+  margin-bottom: var(--space-md);
+}
+
+.team-page__label span {
+  display: inline-block;
+  width: 20px;
+  height: 2px;
+  background: var(--clr-red);
+}
+
+.team-page__sub {
+  color: var(--clr-text-muted);
+  font-size: 1rem;
+  margin-top: var(--space-md);
+}

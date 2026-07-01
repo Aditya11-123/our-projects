@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <!-- Checkered Flag background accent -->
+  <path d="M 0 0 L 20 0 L 20 20 L 0 20 Z" fill="#E10600" />
+  <path d="M 20 20 L 40 20 L 40 40 L 20 40 Z" fill="#E10600" />
+  
+  <text x="50" y="65" font-family="'Barlow Condensed', sans-serif" font-weight="900" font-size="42" fill="#FFFFFF" text-anchor="middle">WP</text>
+  
+  <!-- Red accent line underneath -->
+  <rect x="25" y="75" width="50" height="6" fill="#E10600" rx="3" />
+</svg>
