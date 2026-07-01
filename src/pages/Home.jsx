@@ -75,19 +75,19 @@ export default function Home() {
   return (
     <div className="bg-[#07070a] text-white min-h-screen">
       {/* ── HERO BANNER ─────────────────────────────────── */}
-      <section className="relative min-h-[90vh] flex items-center pt-24 overflow-hidden" aria-label="Hero Showcase">
+      <section className="relative min-h-[650px] lg:min-h-0 lg:aspect-[16/9] w-full flex items-start pt-24 lg:pt-44 overflow-hidden" aria-label="Hero Showcase">
         {/* Background F1 track image / overlay */}
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1600&q=80"
+            src="/hero-bg.jpg"
             alt="Formula 1 Racing Background"
-            className="w-full h-full object-cover object-center opacity-65"
+            className="w-full h-full object-cover object-center opacity-90"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#07070a] via-[#07070a]/85 to-transparent z-10" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-black/20 z-10" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#07070a] via-transparent to-transparent z-10" />
         </div>
 
-        <div className="container mx-auto px-4 md:px-8 z-20 relative grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div className="container mx-auto px-4 md:px-8 z-20 relative grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Hero Left Content */}
           <motion.div
             className="lg:col-span-7 flex flex-col items-start text-left"
@@ -202,72 +202,72 @@ export default function Home() {
             </div>
           </motion.div>
         </div>
-      </section>
 
-      {/* ── METRICS STRIP ────────────────────────────────── */}
-      <section className="bg-[#0b0b0f] border-y border-white/5 relative z-20">
-        <div className="container mx-auto px-4 md:px-8 grid grid-cols-1 md:grid-cols-12 items-stretch">
-          {/* Main Counters */}
-          <div className="md:col-span-8 py-6 grid grid-cols-2 sm:grid-cols-4 gap-6 items-center">
-            <div className="flex items-center gap-4 px-4">
-              <div className="w-10 h-10 rounded-sm bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
-                <Folder size={18} />
+        {/* ── METRICS STRIP (Overlay) ────────────────────────── */}
+        <div className="absolute bottom-4 lg:bottom-8 left-0 right-0 bg-[#0b0b0f]/95 border-y border-white/5 z-30">
+          <div className="container mx-auto px-4 md:px-8 grid grid-cols-1 md:grid-cols-12 items-stretch">
+            {/* Main Counters */}
+            <div className="md:col-span-8 py-4 grid grid-cols-2 sm:grid-cols-4 gap-6 items-center">
+              <div className="flex items-center gap-4 px-4">
+                <div className="w-10 h-10 rounded-sm bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
+                  <Folder size={18} />
+                </div>
+                <div>
+                  <div className="text-xl md:text-2xl font-display font-extrabold">250+</div>
+                  <div className="text-[10px] text-gray-500 uppercase tracking-wider">Projects</div>
+                </div>
               </div>
-              <div>
-                <div className="text-xl md:text-2xl font-display font-extrabold">250+</div>
-                <div className="text-[10px] text-gray-500 uppercase tracking-wider">Projects</div>
+
+              <div className="flex items-center gap-4 px-4 border-l border-white/5">
+                <div className="w-10 h-10 rounded-sm bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
+                  <Users size={18} />
+                </div>
+                <div>
+                  <div className="text-xl md:text-2xl font-display font-extrabold">50+</div>
+                  <div className="text-[10px] text-gray-500 uppercase tracking-wider">Teams</div>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4 px-4 border-l border-white/5">
+                <div className="w-10 h-10 rounded-sm bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
+                  <Code size={18} />
+                </div>
+                <div>
+                  <div className="text-xl md:text-2xl font-display font-extrabold">120+</div>
+                  <div className="text-[10px] text-gray-500 uppercase tracking-wider">Developers</div>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4 px-4 border-l border-white/5">
+                <div className="w-10 h-10 rounded-sm bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
+                  <Trophy size={18} />
+                </div>
+                <div>
+                  <div className="text-xl md:text-2xl font-display font-extrabold">25+</div>
+                  <div className="text-[10px] text-gray-500 uppercase tracking-wider">Awards</div>
+                </div>
               </div>
             </div>
 
-            <div className="flex items-center gap-4 px-4 border-l border-white/5">
-              <div className="w-10 h-10 rounded-sm bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
-                <Users size={18} />
-              </div>
+            {/* Have an Idea Skewed Card */}
+            <Link
+              to="/about"
+              className="md:col-span-4 bg-primary hover:bg-primary-dark transition-colors duration-300 text-white flex items-center justify-between px-8 py-5 clip-skew-right relative overflow-hidden group"
+            >
               <div>
-                <div className="text-xl md:text-2xl font-display font-extrabold">50+</div>
-                <div className="text-[10px] text-gray-500 uppercase tracking-wider">Teams</div>
+                <div className="text-xs uppercase font-extrabold tracking-wider italic text-white/80">
+                  Have an idea?
+                </div>
+                <div className="text-base font-display font-extrabold uppercase tracking-wider">
+                  Submit Your Project
+                </div>
               </div>
-            </div>
-
-            <div className="flex items-center gap-4 px-4 border-l border-white/5">
-              <div className="w-10 h-10 rounded-sm bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
-                <Code size={18} />
-              </div>
-              <div>
-                <div className="text-xl md:text-2xl font-display font-extrabold">120+</div>
-                <div className="text-[10px] text-gray-500 uppercase tracking-wider">Developers</div>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-4 px-4 border-l border-white/5">
-              <div className="w-10 h-10 rounded-sm bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
-                <Trophy size={18} />
-              </div>
-              <div>
-                <div className="text-xl md:text-2xl font-display font-extrabold">25+</div>
-                <div className="text-[10px] text-gray-500 uppercase tracking-wider">Awards</div>
-              </div>
-            </div>
+              <ArrowRight
+                size={20}
+                className="transform group-hover:translate-x-2 transition-transform duration-300"
+              />
+            </Link>
           </div>
-
-          {/* Have an Idea Skewed Card */}
-          <Link
-            to="/about"
-            className="md:col-span-4 bg-primary hover:bg-primary-dark transition-colors duration-300 text-white flex items-center justify-between px-8 py-6 clip-skew-right relative overflow-hidden group"
-          >
-            <div>
-              <div className="text-xs uppercase font-extrabold tracking-wider italic text-white/80">
-                Have an idea?
-              </div>
-              <div className="text-base font-display font-extrabold uppercase tracking-wider">
-                Submit Your Project
-              </div>
-            </div>
-            <ArrowRight
-              size={20}
-              className="transform group-hover:translate-x-2 transition-transform duration-300"
-            />
-          </Link>
         </div>
       </section>
 
