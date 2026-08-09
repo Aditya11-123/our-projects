@@ -17,7 +17,7 @@ export default function Team() {
             Our Team
           </h1>
           <p className="text-gray-400 text-xs md:text-sm mt-2 max-w-xl">
-            Meet the developers, engineers, and designers driving innovation at WE PRO.
+            Meet the developers, engineers, and designers driving innovation at OUR IMPACT.
           </p>
         </div>
       </div>

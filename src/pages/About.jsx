@@ -11,7 +11,7 @@ export default function About() {
             ORGANIZATION
           </div>
           <h1 className="text-3xl md:text-5xl font-display font-extrabold uppercase italic tracking-wide">
-            About We Pro
+            About Our Impact
           </h1>
           <p className="text-gray-400 text-xs md:text-sm mt-2 max-w-xl">
             A collective of engineers pushing the boundaries of what's possible on the web.
