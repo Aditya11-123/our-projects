@@ -1,0 +1,39 @@
+import React from 'react';
+import Container from '../common/Container';
+import { Monitor, Smartphone, Database, TrendingUp } from 'lucide-react';
+
+export default function OurWorkCapabilityStrip() {
+  const capabilities = [
+    { num: "03", title: "WEB", desc: "Projects", icon: <Monitor size={20} className="text-brand-primary" /> },
+    { num: "01", title: "MOBILE", desc: "Project", icon: <Smartphone size={20} className="text-brand-primary" /> },
+    { num: "01", title: "BUSINESS SYSTEMS", desc: "Proposed Solution", icon: <Database size={20} className="text-brand-primary" /> },
+    { num: "02", title: "DIGITAL GROWTH", desc: "Concepts", icon: <TrendingUp size={20} className="text-brand-primary" /> }
+  ];
+
+  return (
+    <div className="bg-white py-8 border-b border-gray-100 relative z-20">
+      <Container>
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 divide-x divide-gray-100">
+          {capabilities.map((cap, idx) => (
+            <div key={idx} className={`flex items-center gap-4 ${idx !== 0 ? 'pl-8' : ''}`}>
+              <div className="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center shrink-0">
+                {cap.icon}
+              </div>
+              <div className="flex flex-col">
+                <span className="text-3xl font-display font-bold text-brand-primary leading-none mb-1">
+                  {cap.num}
+                </span>
+                <span className="text-[10px] font-bold tracking-widest text-gray-900 uppercase">
+                  {cap.title}
+                </span>
+                <span className="text-[10px] text-gray-500">
+                  {cap.desc}
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Container>
+    </div>
+  );
+}

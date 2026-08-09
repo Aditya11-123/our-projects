@@ -1,57 +1,50 @@
 import React, { Suspense } from 'react';
 
-// Eagerly loaded components (above the fold / high priority)
+// Eagerly loaded core components
 import Hero from '../components/home/Hero';
-import Mission from '../components/home/Mission';
+import CapabilityStrip from '../components/home/CapabilityStrip';
+import ServicesPreview from '../components/home/ServicesPreview';
+import BusinessChallenges from '../components/home/BusinessChallenges';
 import Achievements from '../components/home/Achievements';
 import FeaturedProjects from '../components/home/FeaturedProjects';
-import TechExpertise from '../components/home/TechExpertise';
+import CaseStudyPreview from '../components/home/CaseStudyPreview';
+import WhyChooseUs from '../components/home/WhyChooseUs';
 import EngineeringProcess from '../components/home/EngineeringProcess';
+import TechExpertise from '../components/home/TechExpertise';
 import CTA from '../components/home/CTA';
 
 // Lazy loaded components (heavy / below the fold)
-const MeetOurTeam = React.lazy(() => import('../components/home/MeetOurTeam'));
 const Testimonials = React.lazy(() => import('../components/home/Testimonials'));
+const MeetOurTeam = React.lazy(() => import('../components/home/MeetOurTeam'));
 
-// Simple fallback skeleton
 const SectionSkeleton = () => (
-  <div className="w-full min-h-[400px] bg-bg-primary flex items-center justify-center border-t border-border-dark animate-pulse">
-    <div className="w-32 h-8 bg-white/5 rounded-full" />
+  <div className="w-full min-h-[400px] bg-white flex items-center justify-center animate-pulse">
+    <div className="w-32 h-8 bg-gray-200 rounded-full" />
   </div>
 );
 
 export default function Home() {
   return (
     <main className="bg-bg-primary min-h-screen">
-      {/* 1. Who are you? */}
       <Hero />
-      
-      {/* 2. Why do you exist? */}
-      <Mission />
-      
-      {/* 3. Can I trust you? */}
+      <CapabilityStrip />
+      <ServicesPreview />
+      <BusinessChallenges />
       <Achievements />
-      
-      {/* 4. What have you built? */}
       <FeaturedProjects />
-      
-      {/* 5. What can you build? */}
+      <CaseStudyPreview />
+      <WhyChooseUs />
+      <EngineeringProcess />
       <TechExpertise />
       
-      {/* 6. How do you work? */}
-      <EngineeringProcess />
-      
-      {/* 7. Who builds it? (Lazy Loaded) */}
-      <Suspense fallback={<SectionSkeleton />}>
-        <MeetOurTeam />
-      </Suspense>
-      
-      {/* 8. What do clients say? (Lazy Loaded) */}
       <Suspense fallback={<SectionSkeleton />}>
         <Testimonials />
       </Suspense>
       
-      {/* 9. How do I contact you? */}
+      <Suspense fallback={<SectionSkeleton />}>
+        <MeetOurTeam />
+      </Suspense>
+      
       <CTA />
     </main>
   );

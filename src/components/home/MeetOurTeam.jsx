@@ -1,36 +1,32 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import Container from '../common/Container';
-import SectionHeader from '../common/SectionHeader';
-import TeamCard from '../common/TeamCard';
+import TeamCard from '../ui/TeamCard';
 import { getTeam } from '../../data/team';
-import { staggerContainer, staggerItem } from '../../animations/stagger';
+import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
 
 export default function MeetOurTeam() {
-  const team = getTeam();
+  // Take top 4 team members for the homepage
+  const team = getTeam().slice(0, 4);
 
   return (
-    <section className="bg-bg-primary border-t border-border-dark">
+    <section className="py-24 bg-bg-primary">
       <Container>
-        <SectionHeader 
-          title="Meet Our Team"
-          heading="The People Behind It"
-          description="A specialized group of architects, engineers, and designers dedicated to pushing the boundaries of what's possible."
-          align="center"
-        />
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+          <div className="max-w-2xl">
+            <h2 className="text-sm font-bold uppercase tracking-widest text-brand-primary mb-3">The People Behind It</h2>
+            <h3 className="text-3xl md:text-4xl font-display font-bold text-gray-900">A specialized group of engineers.</h3>
+          </div>
+          <Link to="/team" className="inline-flex items-center gap-2 text-sm font-bold text-brand-primary hover:text-brand-primaryHover transition-colors">
+            Meet the Full Team <ArrowRight size={16} />
+          </Link>
+        </div>
 
-        <motion.div 
-          variants={staggerContainer}
-          initial="initial"
-          whileInView="whileInView"
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
-        >
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {team.map(member => (
-            <motion.div key={member.id} variants={staggerItem}>
-              <TeamCard member={member} />
-            </motion.div>
+            <TeamCard key={member.id} member={member} />
           ))}
-        </motion.div>
+        </div>
       </Container>
     </section>
   );

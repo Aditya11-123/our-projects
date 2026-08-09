@@ -1,50 +1,41 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import Container from '../common/Container';
-import SectionHeader from '../common/SectionHeader';
-import StatCard from '../common/StatCard';
-import { achievementsData } from '../../data/achievements';
-import { staggerContainer, staggerItem } from '../../animations/stagger';
+import { Briefcase, Globe, Code, Smartphone } from 'lucide-react';
+import { motion } from 'framer-motion';
+
+const achievements = [
+  { icon: Briefcase, title: 'Real-World Projects', desc: 'Proven track record of delivering functional software.' },
+  { icon: Globe, title: 'Multiple Domains', desc: 'Experience across manufacturing, retail, and tech.' },
+  { icon: Code, title: 'Modern Stack', desc: 'Expertise in React, Node, AWS, and modern cloud infrastructure.' },
+  { icon: Smartphone, title: 'Cross-Platform', desc: 'Unified solutions for Web, iOS, and Android ecosystems.' },
+];
 
 export default function Achievements() {
   return (
-    <section className="relative overflow-hidden border-t border-border-dark py-24">
-      {/* Background with Track Image and Heavy Overlay */}
-      <div className="absolute inset-0 z-0">
-        <picture>
-          <source srcSet="/hero-bg.avif" type="image/avif" />
-          <source srcSet="/hero-bg.webp" type="image/webp" />
-          <img
-            src="/hero-bg.jpg"
-            alt="Track Background"
-            className="w-full h-full object-cover object-center opacity-40 blur-sm scale-105"
-          />
-        </picture>
-        <div className="absolute inset-0 bg-[#050507]/90 z-10" />
-        <div className="absolute inset-0 bg-gradient-to-b from-bg-primary via-transparent to-bg-secondary z-10" />
-      </div>
+    <section className="py-24 bg-white">
+      <Container>
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <h2 className="text-sm font-bold uppercase tracking-widest text-brand-primary mb-3">Our Track Record</h2>
+          <h3 className="text-3xl md:text-4xl font-display font-bold text-gray-900">Proven engineering capability.</h3>
+        </div>
 
-      <Container className="relative z-20">
-        <SectionHeader 
-          title="OUR IMPACT"
-          heading={<>ENGINEERING EXCELLENCE<br/><span className="text-primary italic">DELIVERING REAL RESULTS</span></>}
-          description="From innovative solutions to measurable outcomes, our numbers reflect our commitment to excellence."
-          align="center"
-        />
-
-        <div className="max-w-5xl mx-auto mt-12 p-6 md:p-10 border border-white/5 rounded-[2rem] bg-[#09090b]/40 backdrop-blur-xl shadow-[0_0_50px_rgba(0,0,0,0.4)]">
-          <motion.div 
-            variants={staggerContainer}
-            initial="initial"
-            whileInView="whileInView"
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-          >
-            {achievementsData.map(stat => (
-              <motion.div key={stat.id} variants={staggerItem} className="h-full">
-                <StatCard {...stat} />
-              </motion.div>
-            ))}
-          </motion.div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {achievements.map((item, idx) => (
+            <motion.div 
+              key={idx}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.1, duration: 0.5 }}
+              className="bg-gray-50 border border-gray-200 rounded-2xl p-6 text-center"
+            >
+              <div className="w-12 h-12 bg-white rounded-full mx-auto flex items-center justify-center text-brand-primary shadow-sm border border-gray-100 mb-4">
+                <item.icon size={20} />
+              </div>
+              <h4 className="text-base font-bold text-gray-900 mb-2">{item.title}</h4>
+              <p className="text-sm text-gray-600 leading-relaxed">{item.desc}</p>
+            </motion.div>
+          ))}
         </div>
       </Container>
     </section>

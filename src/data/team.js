@@ -1,55 +1,58 @@
 const defaultTeam = [
   {
     id: 'team-1',
-    name: 'Aditya',
-    role: 'Senior Backend Engineer',
+    name: 'Hemant Kumar Khora',
+    role: 'Fullstack Developer & Video Editor',
     availability: 'Available',
     location: 'India',
-    experience: '6 Years',
-    specialization: 'Microservices',
-    languages: ['Java', 'Spring Boot', 'Node.js'],
-    githubUrl: 'https://github.com/wepro-aditya',
-    linkedinUrl: 'https://linkedin.com/in/wepro-aditya',
-    image: 'https://api.dicebear.com/7.x/initials/svg?seed=Aditya&backgroundColor=E10600&textColor=ffffff'
+    experience: '5+ Years',
+    specialization: 'Web Development & Video Production',
+    languages: ['React', 'Node.js', 'Premiere Pro'],
+    githubUrl: '#',
+    linkedinUrl: '#',
+    emailUrl: '#',
+    image: 'https://api.dicebear.com/7.x/initials/svg?seed=Hemant&backgroundColor=2563EB&textColor=ffffff'
   },
   {
     id: 'team-2',
-    name: 'Sarah',
-    role: 'Lead UI/UX Designer',
-    availability: 'Booked',
-    location: 'USA',
-    experience: '8 Years',
-    specialization: 'Design Systems',
-    languages: ['Figma', 'Framer', 'React'],
+    name: 'Subham Mishra',
+    role: 'UI/UX Designer & Frontend Developer',
+    availability: 'Available',
+    location: 'India',
+    experience: '5+ Years',
+    specialization: 'Interfaces, Graphics & Frontend',
+    languages: ['Figma', 'React', 'Photoshop'],
     githubUrl: '#',
     linkedinUrl: '#',
-    image: 'https://api.dicebear.com/7.x/initials/svg?seed=Sarah&backgroundColor=050507&textColor=ffffff'
+    emailUrl: '#',
+    image: 'https://api.dicebear.com/7.x/initials/svg?seed=Subham&backgroundColor=0B1220&textColor=ffffff'
   },
   {
     id: 'team-3',
-    name: 'Rahul',
-    role: 'Cloud Architect',
+    name: 'Aditya Parida',
+    role: 'Backend Developer & Social Media Exec',
     availability: 'Available',
-    location: 'UK',
-    experience: '10 Years',
-    specialization: 'DevOps & AWS',
-    languages: ['Terraform', 'Docker', 'Kubernetes'],
+    location: 'India',
+    experience: '4+ Years',
+    specialization: 'Backend Systems & Marketing',
+    languages: ['Python', 'Node.js', 'Social Strategy'],
     githubUrl: '#',
     linkedinUrl: '#',
-    image: 'https://api.dicebear.com/7.x/initials/svg?seed=Rahul&backgroundColor=1F1F28&textColor=ffffff'
+    emailUrl: '#',
+    image: 'https://api.dicebear.com/7.x/initials/svg?seed=Aditya&backgroundColor=06B6D4&textColor=ffffff'
   },
   {
     id: 'team-4',
-    name: 'Priya',
-    role: 'AI Researcher',
+    name: 'Aditya Ranjan Biswal',
+    role: 'Fullstack Developer & Automation Test Engineer',
     availability: 'Available',
-    location: 'Canada',
-    experience: '5 Years',
-    specialization: 'LLMs & NLP',
-    languages: ['Python', 'PyTorch', 'TensorFlow'],
+    location: 'India',
+    experience: '4+ Years',
+    specialization: 'Web Architecture & Quality Assurance',
+    languages: ['React', 'Java', 'Selenium'],
     githubUrl: '#',
     linkedinUrl: '#',
-    image: 'https://api.dicebear.com/7.x/initials/svg?seed=Priya&backgroundColor=E10600&textColor=ffffff'
+    image: 'https://api.dicebear.com/7.x/initials/svg?seed=AdityaR&backgroundColor=2563EB&textColor=ffffff'
   }
 ];
 

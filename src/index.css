@@ -1,19 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Inter:wght@300;400;500;600;700&display=swap');
 
 @import "tailwindcss";
 
 @theme {
-  --font-display: 'Oswald', sans-serif;
+  --font-display: 'Plus Jakarta Sans', sans-serif;
   --font-body: 'Inter', sans-serif;
 
-  --color-primary: #FF2B06;
-  --color-primary-dark: #E52605;
-  --color-bg-primary: #050507;
-  --color-bg-secondary: #09090B;
-  --color-card-base: #0D0D12;
-  --color-card-hover: #121218;
-  --color-border-dark: #1F1F28;
-  --color-text-secondary: #9CA3AF;
+  --color-brand-primary: #2563EB;
+  --color-brand-primaryHover: #1D4ED8;
+  --color-brand-cyan: #06B6D4;
+  --color-brand-navy: #0A192F;
+  --color-bg-primary: #F8FAFC;
+  --color-bg-secondary: #FFFFFF;
+  --color-card-base: #FFFFFF;
+  --color-card-hover: #F1F5F9;
+  --color-border-dark: #E2E8F0;
+  --color-text-primary: #0F172A;
+  --color-text-secondary: #475569;
 }
 
 /* Base resets and overrides */
@@ -24,7 +27,7 @@ html {
 body {
   font-family: var(--font-body);
   background-color: var(--color-bg-primary);
-  color: #ffffff;
+  color: var(--color-text-primary);
   overflow-x: hidden;
 }
 
@@ -41,7 +44,7 @@ body {
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-primary);
+  background: var(--color-brand-primary);
 }
 
 /* Accessibility - Skip to content & reduced motion */
@@ -49,7 +52,7 @@ body {
   position: absolute;
   top: -40px;
   left: 0;
-  background: var(--color-primary);
+  background: var(--color-brand-primary);
   color: white;
   padding: 8px;
   z-index: 100;

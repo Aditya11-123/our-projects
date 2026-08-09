@@ -1,30 +1,36 @@
 // ============================================================
-// OUR IMPACT — Theme Configuration
+// DIGITAL SOLUTIONS — Theme Configuration
 // ============================================================
 
 export const theme = {
   colors: {
     background: {
-      primary: '#050507',
-      secondary: '#09090B',
+      primary: '#F8FAFC', // Slate 50
+      secondary: '#FFFFFF', // White
+      navy: '#0A192F', // Deep Navy for dark sections
     },
     card: {
-      base: '#0D0D12',
-      hover: '#121218',
+      base: '#FFFFFF',
+      hover: '#F1F5F9', // Slate 100
+      dark: '#112240',
     },
     border: {
-      default: '#1F1F28',
-      hover: '#333340',
-      active: '#FF2B06', // Primary accent on active
+      default: '#E2E8F0', // Slate 200
+      hover: '#CBD5E1', // Slate 300
+      active: '#2563EB', // Professional Blue
+      dark: '#233554',
     },
     text: {
-      primary: '#FFFFFF',
-      secondary: '#9CA3AF',
-      muted: '#6B7280',
+      primary: '#0F172A', // Slate 900
+      secondary: '#475569', // Slate 600
+      muted: '#94A3B8', // Slate 400
+      inverse: '#FFFFFF',
     },
     brand: {
-      primary: '#FF2B06', // High-energy Orange/Red
-      primaryHover: '#E52605',
+      primary: '#2563EB', // Professional Blue
+      primaryHover: '#1D4ED8',
+      accent: '#06B6D4', // Bright Cyan
+      navy: '#0A192F',
     }
   },
   spacing: {
@@ -34,10 +40,10 @@ export const theme = {
   radius: {
     card: 'rounded-2xl',
     button: 'rounded-xl',
-    badge: 'rounded-md',
+    badge: 'rounded-full',
   },
   shadow: {
-    card: 'shadow-[0_8px_30px_rgba(0,0,0,0.4)]',
-    cardHover: 'hover:shadow-[0_8px_30px_rgba(255,43,6,0.15)]',
+    card: 'shadow-md',
+    cardHover: 'hover:shadow-xl',
   }
 };

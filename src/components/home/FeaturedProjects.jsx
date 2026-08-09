@@ -1,81 +1,49 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import Container from '../common/Container';
-import SectionHeader from '../common/SectionHeader';
-import ProjectCard from '../common/ProjectCard';
+import ProjectCard from '../ui/ProjectCard';
 import { getProjects } from '../../data/projects';
-import { staggerContainer, staggerItem } from '../../animations/stagger';
-
-const FILTERS = ['All', 'Web App', 'Mobile', 'AI', 'Cloud', 'Enterprise'];
+import { ArrowRight } from 'lucide-react';
 
 export default function FeaturedProjects() {
-  const [filter, setFilter] = useState('All');
-  const projects = getProjects();
+  const allProjects = getProjects();
+  // Select the specific 4 projects requested for the homepage
+  const homepageProjectIds = [
+    'bdm-fresh',
+    'tejas-investment-solutions',
+    'indian-cocktail-academy',
+    'manufacturing-digital-transformation'
+  ];
   
-  const filteredProjects = filter === 'All' 
-    ? projects 
-    : projects.filter(p => p.category === filter);
+  const featured = homepageProjectIds
+    .map(id => allProjects.find(p => p.id === id))
+    .filter(Boolean); // Ensure they exist
 
   return (
-    <section className="bg-bg-secondary border-t border-border-dark py-24">
+    <section className="py-24 bg-bg-primary">
       <Container>
-        <SectionHeader 
-          title="Featured Work"
-          heading="What We Have Built"
-          description="Explore a selection of our most complex and impactful engineering projects across various domains."
-          align="center"
-        />
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+          <div className="max-w-2xl">
+            <h2 className="text-sm font-bold uppercase tracking-widest text-brand-primary mb-3">Selected Work</h2>
+            <h3 className="text-3xl md:text-5xl font-display font-bold text-gray-900 leading-[1.2]">
+              Explore some of the websites, mobile experiences and business solutions we've built and designed.
+            </h3>
+          </div>
+        </div>
 
-        {/* Filter Bar */}
-        <motion.div 
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="flex flex-wrap items-center justify-center gap-3 mb-12"
-        >
-          {FILTERS.map(f => (
-            <button
-              key={f}
-              onClick={() => setFilter(f)}
-              className={`px-5 py-2 rounded-full text-[11px] font-bold transition-all duration-300 border ${
-                filter === f 
-                  ? 'border-primary text-primary bg-[#0A0A0E]' 
-                  : 'border-white/5 text-gray-400 bg-[#0A0A0E] hover:border-white/20 hover:text-white'
-              }`}
-            >
-              {f}
-            </button>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {featured.map((project, idx) => (
+            <div key={project.id} className={idx === 3 ? "lg:col-span-3 max-w-4xl mx-auto w-full" : ""}>
+               <ProjectCard project={project} />
+            </div>
           ))}
-        </motion.div>
-
-        {/* Projects Grid - Updated to 4 columns */}
-        <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          <AnimatePresence mode="popLayout">
-            {filteredProjects.length > 0 ? (
-              filteredProjects.map(project => (
-                <motion.div
-                  key={project.id}
-                  layout
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.3 }}
-                  className="h-full"
-                >
-                  <ProjectCard project={project} />
-                </motion.div>
-              ))
-            ) : (
-              <motion.div 
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                className="col-span-full py-20 text-center border border-dashed border-border-dark rounded-2xl"
-              >
-                <p className="text-gray-500 font-display text-xl uppercase tracking-wider">No Projects Found</p>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </motion.div>
+        </div>
+        
+        <div className="mt-16 flex justify-center">
+           <Link to="/our-work" className="inline-flex items-center justify-center px-8 py-4 bg-white border border-gray-200 text-gray-800 font-bold rounded-xl hover:bg-gray-50 hover:border-gray-300 transition-colors shadow-sm">
+             View All Work <ArrowRight size={18} className="ml-2" />
+           </Link>
+        </div>
       </Container>
     </section>
   );

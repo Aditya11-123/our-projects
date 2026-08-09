@@ -6,19 +6,29 @@ import Projects from './pages/Projects';
 import ProjectDetail from './pages/ProjectDetail';
 import Team from './pages/Team';
 import About from './pages/About';
+import Services from './pages/Services';
+import OurWork from './pages/OurWork';
+import CaseStudies from './pages/CaseStudies';
+import Contact from './pages/Contact';
+import NotFound from './pages/NotFound';
 import './styles/animations.css';
 
 function AppContent() {
   return (
-    <div className="page-layout animate-fadeIn">
+    <div className="page-layout animate-fadeIn bg-bg-primary text-text-primary min-h-screen">
       <Navbar />
       <div className="page-main">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/projects/:id" element={<ProjectDetail />} />
-          <Route path="/team" element={<Team />} />
+          <Route path="/services" element={<Services />} />
+          {/* We will add /services/:slug later */}
+          <Route path="/our-work" element={<OurWork />} />
+          <Route path="/case-studies" element={<CaseStudies />} />
+          {/* We will add /case-studies/:slug later */}
           <Route path="/about" element={<About />} />
+          <Route path="/team" element={<Team />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
       <Footer />

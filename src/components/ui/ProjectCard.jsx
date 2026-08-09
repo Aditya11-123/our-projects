@@ -1,103 +1,113 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { Star, ChevronRight, Layers, Database, Terminal, Cpu } from 'lucide-react';
+import { ArrowRight, Layers, Database, Smartphone, Globe, Megaphone } from 'lucide-react';
 
-const CATEGORY_STYLES = {
-  'Web App': { bg: 'bg-blue-500/10 text-blue-400 border-blue-500/20', label: 'WEB APP' },
-  'AI/ML': { bg: 'bg-purple-500/10 text-purple-400 border-purple-500/20', label: 'AI/ML' },
-  Mobile: { bg: 'bg-green-500/10 text-green-400 border-green-500/20', label: 'MOBILE APP' },
-  Tool: { bg: 'bg-red-500/10 text-red-400 border-red-500/20', label: 'TOOL' },
-  Game: { bg: 'bg-yellow-500/10 text-yellow-400 border-yellow-500/20', label: 'GAME' },
-};
-
-const TECH_ICON_MAP = {
-  React: { icon: <Layers size={11} />, color: 'text-blue-400 bg-blue-500/10' },
-  'Node.js': { icon: <Database size={11} />, color: 'text-green-400 bg-green-500/10' },
-  MongoDB: { icon: <Database size={11} />, color: 'text-green-500 bg-green-500/10' },
-  Express: { icon: <Database size={11} />, color: 'text-gray-400 bg-gray-500/10' },
-  Python: { icon: <Terminal size={11} />, color: 'text-yellow-400 bg-yellow-500/10' },
-  'OpenAI API': { icon: <Cpu size={11} />, color: 'text-purple-400 bg-purple-500/10' },
-  Firebase: { icon: <Database size={11} />, color: 'text-orange-400 bg-orange-500/10' },
-  'TensorFlow.js': { icon: <Cpu size={11} />, color: 'text-red-400 bg-red-500/10' },
-  'React Native': { icon: <Layers size={11} />, color: 'text-blue-500 bg-blue-500/10' },
-};
-
-export default function ProjectCard({ project, index = 0 }) {
-  const catStyle = CATEGORY_STYLES[project.category] || {
-    bg: 'bg-gray-500/10 text-gray-400 border-gray-500/20',
-    label: project.category.toUpperCase(),
+export default function ProjectCard({ project, featured = false }) {
+  // Map standard project categories to specific icons
+  const getCategoryIcon = (cat) => {
+    switch(cat?.toLowerCase()) {
+      case 'web':
+      case 'website development': return <Globe size={16} />;
+      case 'mobile':
+      case 'mobile application': return <Smartphone size={16} />;
+      case 'business systems':
+      case 'erp': return <Database size={16} />;
+      case 'digital marketing': return <Megaphone size={16} />;
+      default: return <Layers size={16} />;
+    }
   };
 
-  // Mock rating based on project ID length to keep it consistent and matches image
-  const mockRating = (4.5 + (project.title.length % 5) * 0.1).toFixed(1);
+  // Status Badge Logic
+  const getStatusBadge = (status) => {
+    switch (status?.toLowerCase()) {
+      case 'completed':
+        return <span className="px-3 py-1 bg-emerald-100 text-emerald-800 text-[10px] font-bold uppercase tracking-wider rounded-sm shadow-sm border border-emerald-200">Completed Client Project</span>;
+      case 'internal':
+        return <span className="px-3 py-1 bg-blue-100 text-blue-800 text-[10px] font-bold uppercase tracking-wider rounded-sm shadow-sm border border-blue-200">Internal Project</span>;
+      case 'concept':
+        return <span className="px-3 py-1 bg-gray-800 text-white text-[10px] font-bold uppercase tracking-wider rounded-sm shadow-sm border border-gray-700">Proposed Solution</span>; // Using Proposed Solution badge for all concepts/proposals as requested for visual consistency, or differentiate. Wait, the spec says "PROPOSED SOLUTION" and "CONCEPT" are separate badges.
+      default:
+        return null;
+    }
+  };
+  
+  const getExactStatusBadge = (status, id) => {
+     if (status === 'completed') return <span className="px-3 py-1 bg-emerald-100 text-emerald-800 text-[10px] font-bold uppercase tracking-wider rounded-sm shadow-sm border border-emerald-200">COMPLETED</span>;
+     if (status === 'internal') return <span className="px-3 py-1 bg-blue-100 text-blue-800 text-[10px] font-bold uppercase tracking-wider rounded-sm shadow-sm border border-blue-200">INTERNAL PROJECT</span>;
+     if (id === 'manufacturing-digital-transformation') return <span className="px-3 py-1 bg-gray-800 text-white text-[10px] font-bold uppercase tracking-wider rounded-sm shadow-sm border border-gray-700">PROPOSED SOLUTION</span>;
+     if (status === 'concept') return <span className="px-3 py-1 bg-purple-100 text-purple-800 text-[10px] font-bold uppercase tracking-wider rounded-sm shadow-sm border border-purple-200">CONCEPT</span>;
+     return null;
+  }
+
+  const FallbackImage = () => (
+    <div className="w-full h-full bg-[#0B1220] flex flex-col items-center justify-center p-6 text-center border-b border-gray-100 group-hover:bg-[#0f172a] transition-colors relative overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_#2563EB1A_0%,_transparent_70%)]"></div>
+      <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-brand-cyan mb-4 relative z-10 border border-white/10">
+        {getCategoryIcon(project.category)}
+      </div>
+      <span className="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-2 relative z-10">{project.category}</span>
+      <h4 className="text-xl font-display font-bold text-white leading-tight relative z-10">{project.title}</h4>
+    </div>
+  );
 
   return (
-    <Link to={`/projects/${project.id}`} className="block group">
-      <div className="bg-[#121216]/50 border border-white/5 hover:border-primary/45 rounded-md overflow-hidden transition-all duration-300 hover:shadow-[0_8px_30px_rgba(225,6,0,0.15)] flex flex-col h-full">
-        {/* Card Thumbnail */}
-        <div className="relative aspect-video w-full overflow-hidden bg-black/40">
-          <img
-            src={project.thumbnail}
-            alt={project.title}
+    <Link to={`/our-work/${project.slug}`} className={`group flex flex-col bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md hover:border-brand-primary/30 transition-all h-full ${featured ? 'md:col-span-2 lg:col-span-3 lg:flex-row' : ''}`}>
+      
+      {/* Thumbnail */}
+      <div className={`relative bg-gray-100 overflow-hidden shrink-0 ${featured ? 'w-full lg:w-[60%] lg:border-r border-gray-100' : 'aspect-[16/10] w-full'}`}>
+        {project.image ? (
+          <img 
+            src={project.image} 
+            alt={project.title} 
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-            onError={(e) => {
-              e.target.src = `https://picsum.photos/seed/${project.id}/800/450`;
-            }}
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#121216] via-transparent to-transparent opacity-80" />
-
-          {/* Category Badge */}
-          <span className={`absolute top-4 left-4 border text-[9px] font-bold px-2 py-0.5 rounded-sm tracking-wider uppercase backdrop-blur-sm ${catStyle.bg}`}>
-            {catStyle.label}
-          </span>
+        ) : (
+          <FallbackImage />
+        )}
+        
+        <div className="absolute top-4 left-4 z-20">
+          {getExactStatusBadge(project.status, project.id)}
         </div>
+        
+        {project.image && (
+          <div className="absolute top-4 right-4 z-20 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-lg flex items-center gap-2 text-[10px] font-bold text-gray-800 shadow-sm border border-gray-200/50">
+            {getCategoryIcon(project.category)}
+            <span className="uppercase tracking-wider">{project.category}</span>
+          </div>
+        )}
+      </div>
 
-        {/* Card Content */}
-        <div className="p-5 flex flex-col flex-grow text-left">
-          <h3 className="text-lg font-display font-extrabold uppercase italic tracking-wide text-white group-hover:text-primary transition-colors duration-300 mb-2">
-            {project.title}
-          </h3>
-          <p className="text-gray-400 text-xs leading-relaxed mb-6 flex-grow line-clamp-2">
-            {project.tagline}
-          </p>
-
-          {/* Card Footer row */}
-          <div className="flex items-center justify-between pt-4 border-t border-white/5 mt-auto">
-            {/* Rating */}
-            <div className="flex items-center gap-1.5 text-xs font-bold text-gray-300">
-              <Star size={12} className="text-primary fill-primary" />
-              <span>{mockRating}</span>
-            </div>
-
-            {/* Tech Stack Circles */}
-            <div className="flex items-center gap-1">
-              {project.techStack.slice(0, 3).map((tech) => {
-                const iconConf = TECH_ICON_MAP[tech] || {
-                  icon: <Layers size={10} />,
-                  color: 'text-gray-400 bg-gray-500/10',
-                };
-                return (
-                  <div
-                    key={tech}
-                    className={`w-6 h-6 rounded-full border border-white/5 flex items-center justify-center ${iconConf.color}`}
-                    title={tech}
-                  >
-                    {iconConf.icon}
-                  </div>
-                );
-              })}
-              {project.techStack.length > 3 && (
-                <span className="text-[9px] font-bold text-gray-500 ml-1">
-                  +{project.techStack.length - 3}
-                </span>
-              )}
-            </div>
-
-            {/* Chevron Right indicator */}
-            <ChevronRight
-              size={14}
-              className="text-gray-500 group-hover:text-primary group-hover:translate-x-0.5 transition-all duration-300"
-            />
+      {/* Content */}
+      <div className={`p-6 md:p-8 flex flex-col flex-grow ${featured ? 'w-full lg:w-[40%] justify-center' : ''}`}>
+        {!project.image && !featured && (
+           <span className="text-[10px] font-bold uppercase tracking-wider text-brand-primary mb-2 flex items-center gap-1.5">
+             {getCategoryIcon(project.category)} {project.category}
+           </span>
+        )}
+        {featured && (
+           <span className="text-[10px] font-bold uppercase tracking-wider text-brand-primary mb-3 flex items-center gap-1.5">
+             {getCategoryIcon(project.category)} {project.category}
+           </span>
+        )}
+        
+        <h3 className={`${featured ? 'text-2xl lg:text-3xl' : 'text-xl'} font-bold text-gray-900 mb-3 leading-tight group-hover:text-brand-primary transition-colors`}>
+          {project.title}
+        </h3>
+        
+        <p className={`text-gray-600 text-sm leading-relaxed mb-8 flex-grow ${featured ? 'text-base mb-10' : 'line-clamp-2'}`}>
+          {project.description}
+        </p>
+        
+        {/* Footer / Tech Stack */}
+        <div className="flex items-center justify-between pt-5 border-t border-gray-100 mt-auto">
+          <div className="flex flex-wrap gap-x-3 gap-y-2 text-xs font-medium text-gray-500">
+            {project.technologies?.slice(0, featured ? 4 : 3).map((tech, idx) => (
+              <span key={idx}>{tech}</span>
+            ))}
+            {project.technologies?.length > (featured ? 4 : 3) && <span className="text-brand-primary">+{project.technologies.length - (featured ? 4 : 3)}</span>}
+          </div>
+          <div className="flex items-center justify-center w-8 h-8 rounded-full bg-gray-50 text-gray-400 group-hover:bg-brand-primary group-hover:text-white transition-colors shrink-0">
+            <ArrowRight size={14} />
           </div>
         </div>
       </div>
