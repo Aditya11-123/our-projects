@@ -50,8 +50,14 @@ export default function ProjectCard({ project, featured = false }) {
     </div>
   );
 
+  const isExternal = !!project.externalLink;
+  const Wrapper = isExternal ? 'a' : Link;
+  const wrapperProps = isExternal 
+    ? { href: project.externalLink, target: "_blank", rel: "noopener noreferrer" }
+    : { to: `/our-work/${project.slug}` };
+
   return (
-    <Link to={`/our-work/${project.slug}`} className={`group flex flex-col bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md hover:border-brand-primary/30 transition-all h-full ${featured ? 'md:col-span-2 lg:col-span-3 lg:flex-row' : ''}`}>
+    <Wrapper {...wrapperProps} className={`group flex flex-col bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md hover:border-brand-primary/30 transition-all h-full ${featured ? 'md:col-span-2 lg:col-span-3 lg:flex-row' : ''}`}>
       
       {/* Thumbnail */}
       <div className={`relative bg-gray-100 overflow-hidden shrink-0 ${featured ? 'w-full lg:w-[60%] lg:border-r border-gray-100' : 'aspect-[16/10] w-full'}`}>
@@ -111,6 +117,6 @@ export default function ProjectCard({ project, featured = false }) {
           </div>
         </div>
       </div>
-    </Link>
+    </Wrapper>
   );
 }

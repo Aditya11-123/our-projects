@@ -34,7 +34,7 @@ export default function OurWork() {
   const showMarketing = activeFilter === 'all' || activeFilter === 'digital marketing';
 
   return (
-    <div className="bg-[#F8FAFC] min-h-screen pt-20 scroll-pt-[90px] scroll-smooth">
+    <div className="bg-transparent min-h-screen pt-20 scroll-pt-[90px] scroll-smooth">
       <OurWorkHero />
       <OurWorkCapabilityStrip />
       <OurWorkFilters activeFilter={activeFilter} setActiveFilter={setActiveFilter} />

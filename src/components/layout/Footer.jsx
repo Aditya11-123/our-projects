@@ -4,19 +4,14 @@ import Container from '../common/Container';
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0A192F] pt-20 pb-10 text-sm">
+    <footer className="bg-[#0A192F] pt-16 pb-8 text-sm">
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16 text-left">
           
           {/* Company Info */}
           <div>
             <Link to="/" className="flex items-center gap-3 mb-6 group">
-              <div className="w-8 h-8 bg-brand-primary rounded-lg flex items-center justify-center text-white font-display font-bold text-lg shadow-sm">
-                M
-              </div>
-              <span className="font-display font-bold text-xl tracking-tight text-white">
-                Our Solutions
-              </span>
+              <span className="font-display font-bold text-2xl text-white tracking-widest">THE S COMPANY</span>
             </Link>
             <p className="text-slate-400 text-sm leading-relaxed mb-6 pr-4">
               We design, develop and implement digital solutions that help businesses streamline operations, engage customers and accelerate growth.
@@ -57,7 +52,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
-          <div>&copy; {new Date().getFullYear()} Our Solutions. All rights reserved.</div>
+          <div>&copy; {new Date().getFullYear()} the s company. All rights reserved.</div>
           <div className="flex gap-6">
             <Link to="#" className="hover:text-white transition-colors">Privacy Policy</Link>
             <Link to="#" className="hover:text-white transition-colors">Terms of Service</Link>

@@ -11,11 +11,13 @@ import OurWork from './pages/OurWork';
 import CaseStudies from './pages/CaseStudies';
 import Contact from './pages/Contact';
 import NotFound from './pages/NotFound';
+import ScrollToTop from './components/common/ScrollToTop';
 import './styles/animations.css';
 
 function AppContent() {
   return (
-    <div className="page-layout animate-fadeIn bg-bg-primary text-text-primary min-h-screen">
+    <div className="page-layout animate-fadeIn bg-gradient-to-br from-[#050505] to-[#1a1a1a] text-white min-h-screen">
+      <ScrollToTop />
       <Navbar />
       <div className="page-main">
         <Routes>

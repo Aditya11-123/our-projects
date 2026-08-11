@@ -14,11 +14,11 @@ const reasons = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="py-24 bg-bg-primary">
+    <section className="py-1 bg-transparent">
       <Container>
         <div className="text-center max-w-2xl mx-auto mb-16">
           <h2 className="text-sm font-bold uppercase tracking-widest text-brand-primary mb-3">Why Choose Us</h2>
-          <h3 className="text-3xl md:text-4xl font-display font-bold text-gray-900">A technology partner you can rely on.</h3>
+          <h3 className="text-3xl md:text-4xl font-display font-bold text-white">A technology partner you can rely on.</h3>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -31,12 +31,12 @@ export default function WhyChooseUs() {
               transition={{ delay: idx * 0.1, duration: 0.5 }}
               className="flex gap-5 items-start"
             >
-              <div className="w-12 h-12 shrink-0 rounded-xl bg-white border border-gray-200 flex items-center justify-center text-brand-primary shadow-sm">
+              <div className="w-12 h-12 shrink-0 rounded-xl bg-transparent border border-white/10 shadow-[0_4px_24px_rgba(37,99,235,0.15)] hover:shadow-[0_8px_32px_rgba(37,99,235,0.4)] transition-all duration-300 flex items-center justify-center text-brand-primary shadow-sm">
                 <reason.icon size={24} />
               </div>
               <div>
-                <h4 className="text-lg font-bold text-gray-900 mb-2">{reason.title}</h4>
-                <p className="text-sm text-gray-600 leading-relaxed">{reason.desc}</p>
+                <h4 className="text-lg font-bold text-white mb-2">{reason.title}</h4>
+                <p className="text-sm text-blue-100/70 leading-relaxed">{reason.desc}</p>
               </div>
             </motion.div>
           ))}

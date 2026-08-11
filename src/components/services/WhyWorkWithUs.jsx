@@ -38,11 +38,11 @@ export default function WhyWorkWithUs() {
   ];
 
   return (
-    <section className="py-24 bg-white border-t border-gray-100">
+    <section className="py-1 bg-transparent border-t border-white/10">
       <Container>
         <div className="text-center max-w-2xl mx-auto mb-16">
           <h2 className="text-sm font-bold uppercase tracking-widest text-brand-primary mb-3">Why Work With Us</h2>
-          <h3 className="text-3xl md:text-4xl font-display font-bold text-gray-900">A partner for your digital growth.</h3>
+          <h3 className="text-3xl md:text-4xl font-display font-bold text-white">A partner for your digital growth.</h3>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -53,13 +53,13 @@ export default function WhyWorkWithUs() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1, duration: 0.5 }}
-              className="bg-bg-primary rounded-2xl p-8 border border-gray-100"
+              className="bg-transparent rounded-2xl p-8 border border-white/10"
             >
-              <div className="w-12 h-12 bg-white rounded-xl shadow-sm border border-gray-100 flex items-center justify-center text-brand-primary mb-6">
+              <div className="w-12 h-12 bg-transparent rounded-xl shadow-sm border border-white/10 flex items-center justify-center text-brand-primary mb-6">
                 <point.icon size={24} />
               </div>
-              <h4 className="text-lg font-bold text-gray-900 mb-3">{point.title}</h4>
-              <p className="text-gray-600 text-sm leading-relaxed">{point.desc}</p>
+              <h4 className="text-lg font-bold text-white mb-3">{point.title}</h4>
+              <p className="text-blue-100/70 text-sm leading-relaxed">{point.desc}</p>
             </motion.div>
           ))}
         </div>

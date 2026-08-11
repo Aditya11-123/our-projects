@@ -27,7 +27,7 @@ export default function Projects() {
   }, [allProjects, category, year, search]);
 
   return (
-    <main className="bg-[#07070a] text-white min-h-screen pt-28 pb-16">
+    <main className="bg-[#07070a] text-white min-h-screen pt-1 pt-1">
       {/* Header banner */}
       <div className="border-b border-white/5 pb-8 mb-12 bg-gradient-to-b from-[#121216]/20 to-transparent">
         <div className="container mx-auto px-4 md:px-8 text-left">
@@ -56,12 +56,12 @@ export default function Projects() {
               value={search}
               onChange={(e) => setSearch(e.target.value)}
             />
-            <Search size={14} className="absolute right-3.5 top-3 text-gray-500" />
+            <Search size={14} className="absolute right-3.5 top-3 text-blue-100/50" />
           </div>
 
           {/* Filter Categories */}
           <div className="flex flex-wrap items-center gap-2">
-            <span className="text-[10px] text-gray-500 uppercase font-bold tracking-wider mr-2">
+            <span className="text-[10px] text-blue-100/50 uppercase font-bold tracking-wider mr-2">
               Category:
             </span>
             {CATEGORIES.map((cat) => (
@@ -81,7 +81,7 @@ export default function Projects() {
 
           {/* Filter Year */}
           <div className="flex items-center gap-2">
-            <span className="text-[10px] text-gray-500 uppercase font-bold tracking-wider mr-2">
+            <span className="text-[10px] text-blue-100/50 uppercase font-bold tracking-wider mr-2">
               Year:
             </span>
             <div className="relative">
@@ -98,14 +98,14 @@ export default function Projects() {
               </select>
               <ChevronDown
                 size={12}
-                className="absolute right-2.5 top-2.5 text-gray-500 pointer-events-none"
+                className="absolute right-2.5 top-2.5 text-blue-100/50 pointer-events-none"
               />
             </div>
           </div>
         </div>
 
         {/* Results Info */}
-        <div className="text-left mb-6 text-xs text-gray-500 flex items-center gap-2 font-bold uppercase tracking-wider">
+        <div className="text-left mb-6 text-xs text-blue-100/50 flex items-center gap-2 font-bold uppercase tracking-wider">
           <Sparkles size={12} className="text-primary" />
           <span>
             Showing {filtered.length} of {allProjects.length} project{filtered.length !== 1 ? 's' : ''}
@@ -140,7 +140,7 @@ export default function Projects() {
             <h3 className="text-lg font-display font-extrabold uppercase italic mt-4 text-white">
               No Projects Found
             </h3>
-            <p className="text-gray-500 text-xs mt-1">
+            <p className="text-blue-100/50 text-xs mt-1">
               Try adjusting your search criteria or category filters.
             </p>
           </div>

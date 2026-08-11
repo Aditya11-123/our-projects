@@ -23,7 +23,7 @@ export default function ServiceHero() {
   };
 
   return (
-    <section className="relative pt-0 pb-24 md:pt-4 md:pb-32 bg-[#FAFBFF] overflow-hidden">
+    <section className="relative pt-0 pt-1 md:pt-4 md:pt-1 bg-transparent overflow-hidden">
       <Container className="relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
@@ -42,7 +42,7 @@ export default function ServiceHero() {
             
             <motion.h1 
               variants={itemVariants}
-              className="text-5xl lg:text-[3.5rem] font-display font-bold text-[#0B1220] leading-[1.1] mb-6 tracking-tight"
+              className="text-5xl lg:text-[3.5rem] font-display font-bold text-white leading-[1.1] mb-6 tracking-tight"
             >
               Digital Solutions <br/> Built Around <br/>
               <span className="text-brand-primary">Your Business.</span>
@@ -50,7 +50,7 @@ export default function ServiceHero() {
             
             <motion.p 
               variants={itemVariants}
-              className="text-lg text-gray-600 mb-10 leading-relaxed font-medium max-w-lg"
+              className="text-lg text-blue-100/70 mb-10 leading-relaxed font-medium max-w-lg"
             >
               From business websites and mobile applications to ERP systems and digital marketing, we build practical digital solutions designed around your business requirements.
             </motion.p>
@@ -59,12 +59,12 @@ export default function ServiceHero() {
               <a href="#core-services" className="inline-flex items-center justify-center px-7 py-3.5 bg-[#0A5BEA] text-white font-medium rounded-xl hover:bg-blue-700 transition-colors shadow-sm">
                 Explore Our Services <ArrowRight size={18} className="ml-2" />
               </a>
-              <Link to="/contact" className="inline-flex items-center justify-center px-7 py-3.5 bg-white border border-gray-300 text-gray-800 font-medium rounded-xl hover:border-gray-400 hover:bg-gray-50 transition-colors shadow-sm">
-                Discuss Your Project <MessageCircle size={18} className="ml-2 text-gray-600" />
+              <Link to="/contact" className="inline-flex items-center justify-center px-7 py-3.5 bg-transparent border border-white/20 text-gray-100 font-medium rounded-xl hover:border-gray-400 hover:bg-transparent transition-colors shadow-sm">
+                Discuss Your Project <MessageCircle size={18} className="ml-2 text-blue-100/70" />
               </Link>
             </motion.div>
             
-            <motion.div variants={itemVariants} className="flex items-center gap-4 text-sm font-bold text-gray-600">
+            <motion.div variants={itemVariants} className="flex items-center gap-4 text-sm font-bold text-blue-100/70">
               <span>Web</span>
               <span className="w-1.5 h-1.5 rounded-full bg-brand-primary"></span>
               <span>ERP</span>
@@ -80,12 +80,12 @@ export default function ServiceHero() {
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="relative hidden lg:flex justify-center items-center h-[600px] w-full"
+            className="relative hidden lg:flex justify-center items-center h-[640px] w-full"
           >
             {/* Concentric Circles */}
-            <div className="absolute w-[450px] h-[450px] rounded-full border border-blue-100/50 z-0"></div>
-            <div className="absolute w-[350px] h-[350px] rounded-full border border-blue-200/60 z-0"></div>
-            <div className="absolute w-[550px] h-[550px] rounded-full border border-blue-50/50 z-0"></div>
+            <div className="absolute w-[450px] h-[450px] rounded-full border border-white/5 z-0"></div>
+            <div className="absolute w-[350px] h-[350px] rounded-full border border-white/10 z-0"></div>
+            <div className="absolute w-[550px] h-[550px] rounded-full border border-white/5 z-0"></div>
             
             {/* Background decorative dots */}
             <div className="absolute top-10 right-10 grid grid-cols-3 gap-2 opacity-20">
@@ -96,60 +96,61 @@ export default function ServiceHero() {
             </div>
 
             {/* Connection Lines */}
-            <div className="absolute w-[500px] h-[2px] bg-blue-100 z-10 flex justify-between items-center px-4">
-               <div className="w-2 h-2 rounded-full bg-brand-primary shadow-[0_0_8px_rgba(37,99,235,0.6)]"></div>
-               <div className="w-2 h-2 rounded-full bg-brand-primary shadow-[0_0_8px_rgba(37,99,235,0.6)]"></div>
+            <div className="absolute w-[500px] h-[1px] bg-white/10 z-10 flex justify-between items-center px-4">
+               <div className="w-2 h-2 rounded-full bg-brand-cyan shadow-[0_0_12px_rgba(6,182,212,0.8)]"></div>
+               <div className="w-2 h-2 rounded-full bg-brand-cyan shadow-[0_0_12px_rgba(6,182,212,0.8)]"></div>
             </div>
-            <div className="absolute h-[500px] w-[2px] bg-blue-100 z-10 flex flex-col justify-between items-center py-4">
-               <div className="w-2 h-2 rounded-full bg-brand-primary shadow-[0_0_8px_rgba(37,99,235,0.6)]"></div>
-               <div className="w-2 h-2 rounded-full bg-brand-primary shadow-[0_0_8px_rgba(37,99,235,0.6)]"></div>
+            <div className="absolute h-[500px] w-[1px] bg-white/10 z-10 flex flex-col justify-between items-center py-4">
+               <div className="w-2 h-2 rounded-full bg-brand-cyan shadow-[0_0_12px_rgba(6,182,212,0.8)]"></div>
+               <div className="w-2 h-2 rounded-full bg-brand-cyan shadow-[0_0_12px_rgba(6,182,212,0.8)]"></div>
             </div>
 
             {/* Center Node: BUSINESS */}
-            <motion.div variants={nodeVariants} className="absolute z-30 w-52 h-52 bg-[#0B1220] rounded-[2rem] shadow-2xl flex flex-col items-center justify-center p-6 text-center">
-              <Building2 className="text-white w-12 h-12 mb-3" strokeWidth={1.5} />
-              <h3 className="text-white font-display font-bold text-xl tracking-wide mb-1">BUSINESS</h3>
-              <p className="text-gray-400 text-xs font-medium px-2">Your Business,<br/>Our Solutions</p>
+            <motion.div variants={nodeVariants} className="absolute z-30 w-44 h-44 bg-white/5 backdrop-blur-xl border border-white/10 rounded-[2rem] shadow-2xl flex flex-col items-center justify-center p-4 text-center relative overflow-hidden group">
+              <div className="absolute inset-0 bg-gradient-to-br from-brand-cyan/10 to-brand-primary/10 opacity-50 group-hover:opacity-100 transition-opacity"></div>
+              <Building2 className="text-brand-cyan w-10 h-10 mb-2 relative z-10 drop-shadow-[0_0_8px_rgba(6,182,212,0.5)]" strokeWidth={1.5} />
+              <h3 className="text-white font-display font-bold text-lg tracking-widest mb-1 relative z-10">BUSINESS</h3>
+              <p className="text-gray-300 text-[9px] uppercase tracking-wider font-semibold px-2 relative z-10">Your Growth Core</p>
             </motion.div>
 
             {/* Top Node: Website */}
-            <motion.div variants={nodeVariants} className="absolute top-4 z-20 w-44 bg-white rounded-2xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.08)] p-5 flex flex-col items-center text-center border border-gray-50 hover:-translate-y-1 transition-transform">
-              <div className="w-10 h-10 mb-3 text-brand-primary">
+            <motion.div variants={nodeVariants} className="absolute top-2 z-20 w-44 bg-black/40 backdrop-blur-md rounded-2xl shadow-[0_8px_32px_rgba(6,182,212,0.15)] p-5 flex flex-col items-center text-center border border-white/10 hover:-translate-y-2 hover:border-white/20 hover:shadow-[0_12px_48px_rgba(6,182,212,0.4)] transition-all">
+              <div className="w-10 h-10 mb-3 text-brand-cyan">
                 <Monitor size={36} strokeWidth={1.5} />
               </div>
-              <h4 className="font-bold text-gray-900 text-sm mb-2">Website</h4>
-              <p className="text-[10px] text-gray-500 leading-tight">Professional websites that represent and grow your business.</p>
-              <div className="w-6 h-0.5 bg-brand-primary mt-3 opacity-30"></div>
+              <h4 className="font-bold text-white text-[13px] uppercase tracking-wider mb-2">Website</h4>
+              <p className="text-[10px] text-gray-400 leading-tight">Professional websites that represent and grow your business.</p>
+              <div className="w-8 h-[1px] bg-gradient-to-r from-transparent via-brand-cyan to-transparent mt-4"></div>
             </motion.div>
 
             {/* Bottom Node: Digital Marketing */}
-            <motion.div variants={nodeVariants} className="absolute bottom-4 z-20 w-44 bg-white rounded-2xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.08)] p-5 flex flex-col items-center text-center border border-gray-50 hover:-translate-y-1 transition-transform">
-              <div className="w-10 h-10 mb-3 text-brand-primary">
+            <motion.div variants={nodeVariants} className="absolute bottom-2 z-20 w-44 bg-black/40 backdrop-blur-md rounded-2xl shadow-[0_8px_32px_rgba(6,182,212,0.15)] p-5 flex flex-col items-center text-center border border-white/10 hover:-translate-y-2 hover:border-white/20 hover:shadow-[0_12px_48px_rgba(6,182,212,0.4)] transition-all">
+              <div className="w-10 h-10 mb-3 text-brand-cyan">
                 <Megaphone size={36} strokeWidth={1.5} />
               </div>
-              <h4 className="font-bold text-gray-900 text-sm mb-2">Digital Marketing</h4>
-              <p className="text-[10px] text-gray-500 leading-tight">Data-driven marketing strategies that drive growth and visibility.</p>
-              <div className="w-6 h-0.5 bg-brand-primary mt-3 opacity-30"></div>
+              <h4 className="font-bold text-white text-[13px] uppercase tracking-wider mb-2">Marketing</h4>
+              <p className="text-[10px] text-gray-400 leading-tight">Data-driven marketing strategies that drive growth and visibility.</p>
+              <div className="w-8 h-[1px] bg-gradient-to-r from-transparent via-brand-cyan to-transparent mt-4"></div>
             </motion.div>
 
             {/* Left Node: Mobile App */}
-            <motion.div variants={nodeVariants} className="absolute left-0 lg:-left-12 z-20 w-40 bg-white rounded-2xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.08)] p-5 flex flex-col items-center text-center border border-gray-50 hover:-translate-y-1 transition-transform">
-              <div className="w-10 h-10 mb-3 text-brand-primary">
+            <motion.div variants={nodeVariants} className="absolute left-0 lg:-left-12 z-20 w-40 bg-black/40 backdrop-blur-md rounded-2xl shadow-[0_8px_32px_rgba(6,182,212,0.15)] p-5 flex flex-col items-center text-center border border-white/10 hover:-translate-y-2 hover:border-white/20 hover:shadow-[0_12px_48px_rgba(6,182,212,0.4)] transition-all">
+              <div className="w-10 h-10 mb-3 text-brand-cyan">
                 <Smartphone size={36} strokeWidth={1.5} />
               </div>
-              <h4 className="font-bold text-gray-900 text-sm mb-2">Mobile App</h4>
-              <p className="text-[10px] text-gray-500 leading-tight">Powerful mobile applications for your customers and team.</p>
-              <div className="w-6 h-0.5 bg-brand-primary mt-3 opacity-30"></div>
+              <h4 className="font-bold text-white text-[13px] uppercase tracking-wider mb-2">Mobile App</h4>
+              <p className="text-[10px] text-gray-400 leading-tight">Powerful mobile applications for your customers and team.</p>
+              <div className="w-8 h-[1px] bg-gradient-to-r from-transparent via-brand-cyan to-transparent mt-4"></div>
             </motion.div>
 
             {/* Right Node: ERP Solutions */}
-            <motion.div variants={nodeVariants} className="absolute right-0 lg:-right-12 z-20 w-40 bg-white rounded-2xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.08)] p-5 flex flex-col items-center text-center border border-gray-50 hover:-translate-y-1 transition-transform">
-              <div className="w-10 h-10 mb-3 text-brand-primary">
+            <motion.div variants={nodeVariants} className="absolute right-0 lg:-right-12 z-20 w-40 bg-black/40 backdrop-blur-md rounded-2xl shadow-[0_8px_32px_rgba(6,182,212,0.15)] p-5 flex flex-col items-center text-center border border-white/10 hover:-translate-y-2 hover:border-white/20 hover:shadow-[0_12px_48px_rgba(6,182,212,0.4)] transition-all">
+              <div className="w-10 h-10 mb-3 text-brand-cyan">
                 <Database size={36} strokeWidth={1.5} />
               </div>
-              <h4 className="font-bold text-gray-900 text-sm mb-2">ERP Solutions</h4>
-              <p className="text-[10px] text-gray-500 leading-tight">Streamline operations with integrated business systems.</p>
-              <div className="w-6 h-0.5 bg-brand-primary mt-3 opacity-30"></div>
+              <h4 className="font-bold text-white text-[13px] uppercase tracking-wider mb-2">ERP Systems</h4>
+              <p className="text-[10px] text-gray-400 leading-tight">Streamline operations with integrated business systems.</p>
+              <div className="w-8 h-[1px] bg-gradient-to-r from-transparent via-brand-cyan to-transparent mt-4"></div>
             </motion.div>
 
           </motion.div>

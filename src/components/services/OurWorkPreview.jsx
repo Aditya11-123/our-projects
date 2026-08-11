@@ -9,12 +9,12 @@ export default function OurWorkPreview() {
   const projects = getProjects().slice(0, 3); // Take top 3
 
   return (
-    <section className="py-24 bg-white border-t border-gray-100">
+    <section className="py-1 bg-transparent border-t border-white/10">
       <Container>
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div className="max-w-2xl">
             <h2 className="text-sm font-bold uppercase tracking-widest text-brand-primary mb-3">Our Work</h2>
-            <h3 className="text-3xl md:text-5xl font-display font-bold text-gray-900">See What We've Built</h3>
+            <h3 className="text-3xl md:text-5xl font-display font-bold text-white">See What We've Built</h3>
           </div>
           <Link to="/our-work" className="inline-flex items-center gap-2 text-sm font-bold text-brand-primary hover:text-brand-primaryHover transition-colors">
             View All Projects <ArrowRight size={16} />

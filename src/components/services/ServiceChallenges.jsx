@@ -40,10 +40,10 @@ export default function ServiceChallenges() {
   ];
 
   return (
-    <section className="py-20 bg-bg-primary">
+    <section className="py-1 bg-transparent">
       <Container>
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl font-display font-bold text-gray-900">From Business Challenges to Digital Solutions</h2>
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-white">From Business Challenges to Digital Solutions</h2>
         </div>
 
         <div className="flex flex-col gap-6 max-w-4xl mx-auto">
@@ -54,15 +54,15 @@ export default function ServiceChallenges() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1, duration: 0.4 }}
-              className="bg-white border border-gray-100 rounded-2xl p-6 sm:p-8 shadow-sm hover:shadow-md transition-shadow group flex flex-col md:flex-row md:items-center justify-between gap-6"
+              className="bg-white/5 border border-white/10 backdrop-blur-sm rounded-2xl p-6 sm:p-8 shadow-sm hover:shadow-md transition-shadow group flex flex-col md:flex-row md:items-center justify-between gap-6"
             >
               <div className="flex items-start gap-5 flex-1">
                 <div className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 ${item.bg} ${item.color}`}>
                   <item.icon size={24} />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">{item.problem}</h3>
-                  <p className="text-gray-600 leading-relaxed text-sm md:text-base">{item.description}</p>
+                  <h3 className="text-xl font-bold text-white mb-2">{item.problem}</h3>
+                  <p className="text-blue-100/70 leading-relaxed text-sm md:text-base">{item.description}</p>
                 </div>
               </div>
               
@@ -70,8 +70,8 @@ export default function ServiceChallenges() {
                 <ArrowRight size={24} />
               </div>
 
-              <div className="md:w-64 shrink-0 bg-gray-50 rounded-xl p-4 border border-gray-100 group-hover:bg-brand-primary/5 group-hover:border-brand-primary/20 transition-colors">
-                <span className="text-xs font-bold text-gray-500 uppercase tracking-wider block mb-1">Solution</span>
+              <div className="md:w-64 shrink-0 bg-transparent rounded-xl p-4 border border-white/10 group-hover:bg-brand-primary/5 group-hover:border-brand-primary/20 transition-colors">
+                <span className="text-xs font-bold text-blue-100/50 uppercase tracking-wider block mb-1">Solution</span>
                 <span className="text-brand-primary font-bold">{item.solution}</span>
               </div>
             </motion.div>

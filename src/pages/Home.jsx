@@ -25,7 +25,7 @@ const SectionSkeleton = () => (
 
 export default function Home() {
   return (
-    <main className="bg-bg-primary min-h-screen">
+    <main className="min-h-screen">
       <Hero />
       <CapabilityStrip />
       <ServicesPreview />

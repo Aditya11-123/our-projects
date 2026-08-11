@@ -26,11 +26,11 @@ export default function TechExpertise() {
   ];
 
   return (
-    <section className="py-20 bg-bg-primary border-t border-gray-100">
+    <section className="py-1 bg-transparent border-t border-white/10">
       <Container>
         <div className="mb-12">
-          <h2 className="text-2xl md:text-3xl font-display font-bold text-gray-900 mb-2">Technology Expertise</h2>
-          <p className="text-gray-600 text-sm md:text-base">Technology that supports the solution.</p>
+          <h2 className="text-2xl md:text-3xl font-display font-bold text-white mb-2">Technology Expertise</h2>
+          <p className="text-blue-100/70 text-sm md:text-base">Technology that supports the solution.</p>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
@@ -39,7 +39,7 @@ export default function TechExpertise() {
               <h4 className="text-xs font-bold uppercase tracking-wider text-brand-primary mb-4 pb-2 border-b border-brand-primary/20">{cat.name}</h4>
               <ul className="flex flex-col gap-3">
                 {cat.tech.map(item => (
-                  <li key={item} className="text-sm font-medium text-gray-700">{item}</li>
+                  <li key={item} className="text-sm font-medium text-gray-200">{item}</li>
                 ))}
               </ul>
             </div>

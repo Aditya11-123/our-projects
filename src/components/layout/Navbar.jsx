@@ -34,15 +34,12 @@ export default function Navbar() {
         <div className="container mx-auto px-4 md:px-8 flex items-center justify-between">
           
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 group">
-            <div className="w-8 h-8 bg-brand-primary rounded-lg flex items-center justify-center text-white font-display font-bold text-lg shadow-sm">
-              M
-            </div>
-            <span className={`font-display font-bold text-xl tracking-tight transition-colors ${
-              isTransparent ? 'text-white drop-shadow-md' : 'text-gray-900'
-            }`}>
-              Our Solutions
-            </span>
+          <Link to="/" className="flex items-center group relative h-10 w-48">
+            <img 
+              src="/logo.png" 
+              alt="The S Company" 
+              className="absolute top-1/2 -translate-y-1/2 left-[20px] h-[100px] max-w-none object-contain transition-all duration-300 drop-shadow-md"
+            />
           </Link>
 
           {/* Desktop Links */}
@@ -73,7 +70,7 @@ export default function Navbar() {
 
           {/* Desktop Right Actions */}
           <div className="hidden md:flex items-center">
-            <Link to="/contact" className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-brand-primary text-white text-sm font-medium rounded-xl hover:bg-brand-primaryHover transition-all shadow-sm hover:shadow-md">
+            <Link to="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-2.5 bg-brand-primary text-white text-sm font-bold uppercase tracking-wider rounded-xl hover:bg-brand-primaryHover transition-all shadow-none">
               Let's Talk <ArrowRight size={16} />
             </Link>
           </div>
@@ -133,7 +130,7 @@ export default function Navbar() {
                 <Link 
                   to="/contact" 
                   onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center justify-center gap-2 w-full py-3 bg-brand-primary text-white rounded-xl font-medium"
+                  className="flex items-center justify-center gap-2 w-full py-3 bg-brand-primary text-white rounded-xl font-bold uppercase tracking-wider shadow-none"
                 >
                   Let's Talk <ArrowRight size={16} />
                 </Link>

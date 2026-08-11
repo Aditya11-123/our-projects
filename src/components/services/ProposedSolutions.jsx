@@ -13,11 +13,11 @@ export default function ProposedSolutions() {
   ];
 
   return (
-    <section className="py-24 bg-bg-primary">
+    <section className="py-1 bg-transparent">
       <Container>
         <div className="text-center max-w-2xl mx-auto mb-16">
           <h2 className="text-sm font-bold uppercase tracking-widest text-brand-primary mb-3">Ecosystem Thinking</h2>
-          <h3 className="text-3xl md:text-4xl font-display font-bold text-gray-900">What We Can Build</h3>
+          <h3 className="text-3xl md:text-4xl font-display font-bold text-white">What We Can Build</h3>
         </div>
 
         <motion.div 

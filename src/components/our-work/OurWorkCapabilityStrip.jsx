@@ -11,7 +11,7 @@ export default function OurWorkCapabilityStrip() {
   ];
 
   return (
-    <div className="bg-white py-8 border-b border-gray-100 relative z-20">
+    <div className="bg-transparent py-8 border-b border-white/10 relative z-20">
       <Container>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 divide-x divide-gray-100">
           {capabilities.map((cap, idx) => (
@@ -23,10 +23,10 @@ export default function OurWorkCapabilityStrip() {
                 <span className="text-3xl font-display font-bold text-brand-primary leading-none mb-1">
                   {cap.num}
                 </span>
-                <span className="text-[10px] font-bold tracking-widest text-gray-900 uppercase">
+                <span className="text-[10px] font-bold tracking-widest text-white uppercase">
                   {cap.title}
                 </span>
-                <span className="text-[10px] text-gray-500">
+                <span className="text-[10px] text-blue-100/50">
                   {cap.desc}
                 </span>
               </div>

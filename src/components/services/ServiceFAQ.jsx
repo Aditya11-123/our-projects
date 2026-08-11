@@ -34,25 +34,25 @@ export default function ServiceFAQ() {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section className="py-24 bg-white border-t border-gray-100">
+    <section className="py-1 bg-transparent border-t border-white/10">
       <Container>
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
-            <p className="text-gray-600">Answers to common questions about working with us.</p>
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-4">Frequently Asked Questions</h2>
+            <p className="text-blue-100/70">Answers to common questions about working with us.</p>
           </div>
 
           <div className="flex flex-col gap-4">
             {faqs.map((faq, idx) => (
               <div 
                 key={idx} 
-                className={`border rounded-2xl overflow-hidden transition-colors ${openIndex === idx ? 'border-brand-primary/20 bg-brand-primary/5' : 'border-gray-200 bg-white'}`}
+                className={`border rounded-2xl overflow-hidden transition-colors ${openIndex === idx ? 'border-brand-primary/20 bg-brand-primary/5' : 'border-white/10 bg-transparent'}`}
               >
                 <button
                   onClick={() => setOpenIndex(openIndex === idx ? -1 : idx)}
                   className="flex items-center justify-between w-full p-6 text-left"
                 >
-                  <span className="font-bold text-gray-900 text-base md:text-lg pr-8">{faq.q}</span>
+                  <span className="font-bold text-white text-base md:text-lg pr-8">{faq.q}</span>
                   <ChevronDown 
                     size={20} 
                     className={`shrink-0 transition-transform duration-300 ${openIndex === idx ? 'rotate-180 text-brand-primary' : 'text-gray-400'}`} 
@@ -67,7 +67,7 @@ export default function ServiceFAQ() {
                       transition={{ duration: 0.3 }}
                       className="overflow-hidden"
                     >
-                      <div className="px-6 pb-6 text-gray-600 leading-relaxed text-sm md:text-base">
+                      <div className="px-6 pb-6 text-blue-100/70 leading-relaxed text-sm md:text-base">
                         {faq.a}
                       </div>
                     </motion.div>

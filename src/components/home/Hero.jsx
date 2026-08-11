@@ -5,7 +5,7 @@ import Container from '../common/Container';
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[90vh] flex items-center pt-20 pb-20 overflow-hidden bg-[#050507]">
+    <section className="relative min-h-[90vh] flex items-center pt-1 pt-1 overflow-hidden bg-[#050507]">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
@@ -55,10 +55,10 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
             className="flex flex-col sm:flex-row gap-4"
           >
-            <Link to="/contact" className="inline-flex items-center justify-center px-8 py-4 bg-brand-primary text-white font-bold rounded-xl hover:bg-brand-primaryHover transition-colors shadow-lg">
+            <Link to="/contact" className="inline-flex items-center justify-center px-8 py-4 bg-brand-primary text-white font-bold uppercase tracking-wider rounded-xl hover:bg-brand-primaryHover transition-colors shadow-none border-2 border-brand-primary">
               Start a Project
             </Link>
-            <Link to="/our-work" className="inline-flex items-center justify-center px-8 py-4 bg-white/10 border border-white/20 text-white font-bold rounded-xl hover:bg-white/20 hover:border-white/40 transition-colors shadow-lg backdrop-blur-md">
+            <Link to="/our-work" className="inline-flex items-center justify-center px-8 py-4 bg-white text-gray-900 font-bold uppercase tracking-wider rounded-xl hover:bg-gray-100 transition-colors shadow-none border-2 border-white">
               Explore Our Work
             </Link>
           </motion.div>

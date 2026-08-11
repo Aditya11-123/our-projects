@@ -14,14 +14,14 @@ export default function OurProcess() {
   ];
 
   return (
-    <section className="py-12 md:py-16 bg-white scroll-mt-[100px]">
+    <section className="py-1 md:py-1 bg-transparent scroll-mt-[100px]">
       <Container>
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div>
-            <h2 className="text-2xl font-display font-bold text-gray-900 mb-2">
+            <h2 className="text-2xl font-display font-bold text-white mb-2">
               Our Approach
             </h2>
-            <p className="text-gray-600 text-sm">
+            <p className="text-blue-100/70 text-sm">
               A clear process that ensures your project is delivered with quality, transparency and on-time execution.
             </p>
           </div>
@@ -40,8 +40,8 @@ export default function OurProcess() {
                  <div className="w-12 h-12 rounded-full bg-brand-primary text-white flex items-center justify-center font-bold text-sm mb-4 shadow-[0_0_15px_rgba(37,99,235,0.4)]">
                    {step.num}
                  </div>
-                 <h3 className="font-bold text-gray-900 mb-2">{step.title}</h3>
-                 <p className="text-[10px] text-gray-500 max-w-[150px] leading-tight">
+                 <h3 className="font-bold text-white mb-2">{step.title}</h3>
+                 <p className="text-[10px] text-blue-100/50 max-w-[150px] leading-tight">
                    {step.desc}
                  </p>
                </div>

@@ -14,11 +14,11 @@ const steps = [
 
 export default function EngineeringProcess() {
   return (
-    <section className="py-24 bg-white border-t border-gray-100">
+    <section className="py-1 bg-transparent border-t border-white/10">
       <Container>
         <div className="text-center max-w-2xl mx-auto mb-16">
           <h2 className="text-sm font-bold uppercase tracking-widest text-brand-primary mb-3">Our Process</h2>
-          <h3 className="text-3xl md:text-4xl font-display font-bold text-gray-900">How we turn ideas into reality.</h3>
+          <h3 className="text-3xl md:text-4xl font-display font-bold text-white">How we turn ideas into reality.</h3>
         </div>
 
         {/* Desktop Horizontal Timeline */}
@@ -33,14 +33,14 @@ export default function EngineeringProcess() {
               className="relative"
             >
               <div className="text-4xl font-display font-black text-gray-100 mb-4">{step.id}</div>
-              <div className="w-10 h-10 bg-gray-50 border border-gray-200 rounded-full flex items-center justify-center text-brand-primary mb-4 relative z-10">
+              <div className="w-10 h-10 bg-transparent border border-white/10 shadow-[0_4px_24px_rgba(37,99,235,0.15)] hover:shadow-[0_8px_32px_rgba(37,99,235,0.4)] transition-all duration-300 rounded-full flex items-center justify-center text-brand-primary mb-4 relative z-10">
                 <step.icon size={18} />
               </div>
               {idx < steps.length - 1 && (
-                <div className="absolute top-[4.5rem] left-[2.5rem] right-0 h-[1px] bg-gray-200 -z-0"></div>
+                <div className="absolute top-[4.5rem] left-[2.5rem] right-0 h-[1px] bg-white/20 -z-0"></div>
               )}
-              <h4 className="text-base font-bold text-gray-900 mb-2">{step.title}</h4>
-              <p className="text-xs text-gray-500 leading-relaxed">{step.desc}</p>
+              <h4 className="text-base font-bold text-white mb-2">{step.title}</h4>
+              <p className="text-xs text-blue-100/50 leading-relaxed">{step.desc}</p>
             </motion.div>
           ))}
         </div>
@@ -57,15 +57,15 @@ export default function EngineeringProcess() {
               className="flex gap-6 relative"
             >
               {idx < steps.length - 1 && (
-                <div className="absolute top-10 bottom-[-2rem] left-6 w-[2px] bg-gray-100 -z-0"></div>
+                <div className="absolute top-10 bottom-[-2rem] left-6 w-[2px] bg-white/20 -z-0"></div>
               )}
-              <div className="w-12 h-12 shrink-0 bg-white border border-gray-200 rounded-full flex items-center justify-center text-brand-primary relative z-10 shadow-sm">
+              <div className="w-12 h-12 shrink-0 bg-transparent border border-white/10 shadow-[0_4px_24px_rgba(37,99,235,0.15)] hover:shadow-[0_8px_32px_rgba(37,99,235,0.4)] transition-all duration-300 rounded-full flex items-center justify-center text-brand-primary relative z-10 shadow-sm">
                 <step.icon size={20} />
               </div>
               <div className="pt-2">
                 <div className="text-xs font-bold text-gray-400 mb-1">STEP {step.id}</div>
-                <h4 className="text-lg font-bold text-gray-900 mb-2">{step.title}</h4>
-                <p className="text-sm text-gray-600 leading-relaxed">{step.desc}</p>
+                <h4 className="text-lg font-bold text-white mb-2">{step.title}</h4>
+                <p className="text-sm text-blue-100/70 leading-relaxed">{step.desc}</p>
               </div>
             </motion.div>
           ))}

@@ -91,14 +91,13 @@ export default function ServiceDetailTabs() {
   const activeContent = content[activeTab];
 
   return (
-    <section className="py-24 bg-[#F8FAFC] relative overflow-hidden">
+    <section className="py-1 bg-transparent relative overflow-hidden">
       
       {/* Subtle Background Treatment */}
       <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[radial-gradient(ellipse_at_center,_#2563EB0A_0%,_transparent_70%)] translate-x-1/3 -translate-y-1/3"></div>
-        <div className="absolute top-0 left-0 w-full h-[400px] bg-gradient-to-b from-white to-transparent opacity-80"></div>
         {/* Subtle grid */}
-        <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(#E2E8F0 1px, transparent 1px)', backgroundSize: '32px 32px', opacity: 0.3 }}></div>
+        <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '32px 32px', opacity: 0.05 }}></div>
       </div>
 
       <Container className="relative z-10">
@@ -109,17 +108,17 @@ export default function ServiceDetailTabs() {
             <span className="text-[10px] font-bold uppercase tracking-widest text-brand-primary">WHAT'S INCLUDED</span>
             <div className="h-px bg-brand-primary/20 w-12"></div>
           </div>
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 leading-tight mb-4 tracking-tight">
+          <h2 className="text-4xl md:text-5xl font-display font-bold text-white leading-tight mb-4 tracking-tight">
             Everything You Need to <br/>
             Build, Launch & <span className="text-brand-primary">Grow.</span>
           </h2>
-          <p className="text-lg text-gray-600 max-w-xl">
+          <p className="text-lg text-blue-100/70 max-w-xl">
             Explore what each solution can include, from business websites and mobile applications to ERP systems and digital growth.
           </p>
         </div>
 
         {/* Service Navigation (Horizontal Selector) */}
-        <div className="flex overflow-x-auto pb-4 mb-16 hide-scrollbar gap-2 lg:gap-4 border-b border-gray-200">
+        <div className="flex overflow-x-auto pb-4 mb-16 hide-scrollbar gap-2 lg:gap-4 border-b border-white/10">
           {tabs.map((tab) => {
             const isActive = activeTab === tab.id;
             return (
@@ -128,8 +127,8 @@ export default function ServiceDetailTabs() {
                 onClick={() => setActiveTab(tab.id)}
                 className={`flex items-center gap-3 px-6 py-4 rounded-t-xl transition-all relative shrink-0 ${
                   isActive 
-                    ? 'bg-white text-brand-primary shadow-[0_-4px_20px_-10px_rgba(0,0,0,0.05)] border-t border-l border-r border-gray-100' 
-                    : 'text-gray-500 hover:text-gray-900 hover:bg-white/50 border-t border-l border-r border-transparent'
+                    ? 'bg-transparent text-brand-primary shadow-[0_-4px_20px_-10px_rgba(0,0,0,0.05)] border-t border-l border-r border-white/10' 
+                    : 'text-blue-100/50 hover:text-white hover:bg-white/50 border-t border-l border-r border-transparent'
                 }`}
               >
                 <tab.icon size={18} />
@@ -162,11 +161,11 @@ export default function ServiceDetailTabs() {
                   {activeContent.introLabel}
                 </span>
                 
-                <h3 className="text-3xl lg:text-4xl font-display font-bold text-gray-900 leading-[1.2] mb-4">
+                <h3 className="text-3xl lg:text-4xl font-display font-bold text-white leading-[1.2] mb-4">
                   {activeContent.introHeading}
                 </h3>
                 
-                <p className="text-gray-600 leading-relaxed mb-10 text-sm md:text-base pr-4">
+                <p className="text-blue-100/70 leading-relaxed mb-10 text-sm md:text-base pr-4">
                   {activeContent.introDesc}
                 </p>
 
@@ -175,10 +174,10 @@ export default function ServiceDetailTabs() {
                   <div className="flex flex-col gap-4">
                     {activeContent.bestFor.map((item, idx) => (
                       <div key={idx} className="flex items-center gap-3">
-                        <div className="w-8 h-8 rounded bg-blue-50/50 flex items-center justify-center text-brand-primary border border-blue-100/50">
+                        <div className="w-8 h-8 rounded bg-brand-primary/10 flex items-center justify-center text-brand-primary border border-white/10">
                           <item.icon size={14} />
                         </div>
-                        <span className="text-sm font-medium text-gray-700">{item.text}</span>
+                        <span className="text-sm font-medium text-gray-200">{item.text}</span>
                       </div>
                     ))}
                   </div>
@@ -208,14 +207,14 @@ export default function ServiceDetailTabs() {
                 </div>
 
                 {/* Deliverables Grid underneath visual */}
-                <div className="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-gray-100">
+                <div className="bg-transparent rounded-2xl p-6 md:p-8 shadow-sm border border-white/10">
                   <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-4">
                     {activeContent.deliverables.map((item, idx) => (
-                      <div key={idx} className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 transition-colors">
-                        <div className="w-5 h-5 rounded-full bg-blue-50 text-brand-primary flex items-center justify-center shrink-0">
+                      <div key={idx} className="flex items-center gap-3 p-2 rounded-lg hover:bg-transparent transition-colors">
+                        <div className="w-5 h-5 rounded-full bg-brand-primary/20 text-brand-primary flex items-center justify-center shrink-0">
                           <Check size={12} strokeWidth={3} />
                         </div>
-                        <span className="text-[11px] md:text-xs font-bold text-gray-800 leading-tight">
+                        <span className="text-[11px] md:text-xs font-bold text-gray-100 leading-tight">
                           {item}
                         </span>
                       </div>

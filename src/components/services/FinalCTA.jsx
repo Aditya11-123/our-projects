@@ -5,7 +5,7 @@ import { ArrowRight } from 'lucide-react';
 
 export default function FinalCTA() {
   return (
-    <section className="py-24 bg-[#0B1220] text-white relative overflow-hidden">
+    <section className="py-1 bg-[#0B1220] text-white relative overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_#2563EB33_0%,_transparent_70%)]"></div>
       
       <Container className="relative z-10 text-center">

@@ -7,7 +7,7 @@ export default function ERPSystemShowcase({ project }) {
   if (!project) return null;
 
   return (
-    <section className="py-16 bg-[#0B1220] relative overflow-hidden border-t border-[#1e293b] scroll-mt-[100px]" id="erp-projects">
+    <section className="py-1 bg-[#0B1220] relative overflow-hidden border-t border-[#1e293b] scroll-mt-[100px]" id="erp-projects">
       <Container className="relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
           
@@ -98,21 +98,21 @@ export default function ERPSystemShowcase({ project }) {
                         <div className="text-brand-primary"><Globe size={14} /></div>
                         <div className="flex flex-col">
                           <span className="text-[9px] font-bold text-white">Website</span>
-                          <span className="text-[7px] text-gray-500">Corporate Presence</span>
+                          <span className="text-[7px] text-blue-100/50">Corporate Presence</span>
                         </div>
                       </div>
                       <div className="bg-[#121b2d] border border-gray-800 rounded-lg p-3 flex items-center gap-3">
                         <div className="text-brand-primary"><Smartphone size={14} /></div>
                         <div className="flex flex-col">
                           <span className="text-[9px] font-bold text-white">Mobile App</span>
-                          <span className="text-[7px] text-gray-500">Customers on the Go</span>
+                          <span className="text-[7px] text-blue-100/50">Customers on the Go</span>
                         </div>
                       </div>
                       <div className="bg-[#121b2d] border border-gray-800 rounded-lg p-3 flex items-center gap-3">
                         <div className="text-brand-primary"><TrendingUp size={14} /></div>
                         <div className="flex flex-col">
                           <span className="text-[9px] font-bold text-white">Digital Growth</span>
-                          <span className="text-[7px] text-gray-500">Marketing & Leads</span>
+                          <span className="text-[7px] text-blue-100/50">Marketing & Leads</span>
                         </div>
                       </div>
                    </div>

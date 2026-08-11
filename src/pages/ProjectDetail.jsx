@@ -31,10 +31,10 @@ export default function ProjectDetail() {
 
   if (!project) {
     return (
-      <main className="min-h-screen bg-[#07070a] text-white flex items-center justify-center pt-24">
+      <main className="min-h-screen bg-[#07070a] text-white flex items-center justify-center pt-1">
         <div className="text-center">
           <h1 className="text-4xl font-display font-extrabold uppercase italic">Project Not Found</h1>
-          <p className="text-gray-500 text-xs mt-2">The requested project entry does not exist.</p>
+          <p className="text-blue-100/50 text-xs mt-2">The requested project entry does not exist.</p>
           <button
             onClick={() => navigate('/projects')}
             className="mt-6 bg-primary hover:bg-primary-dark text-white px-5 py-2.5 rounded-sm font-display font-bold uppercase tracking-wider text-xs transition-colors"
@@ -49,7 +49,7 @@ export default function ProjectDetail() {
   const categoryColor = CATEGORY_COLORS[project.category] || 'bg-gray-500/10 text-gray-400 border-gray-500/20';
 
   return (
-    <main className="bg-[#07070a] text-white min-h-screen pt-20">
+    <main className="bg-[#07070a] text-white min-h-screen pt-1">
       {/* Banner Header */}
       <section className="relative h-[45vh] min-h-[300px] overflow-hidden flex items-end">
         <div className="absolute inset-0">
@@ -128,7 +128,7 @@ export default function ProjectDetail() {
       </div>
 
       {/* Main layout divisions */}
-      <section className="container mx-auto px-4 md:px-8 py-12 text-left">
+      <section className="container mx-auto px-4 md:px-8 py-1 text-left">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Left Column: Core Description Details */}
           <div className="lg:col-span-8 flex flex-col gap-8">
@@ -208,7 +208,7 @@ export default function ProjectDetail() {
                   {project.highlights.map((h, idx) => (
                     <div key={idx} className="bg-white/[0.01] border border-white/5 rounded-sm p-3 text-center">
                       <div className="font-display text-lg font-black text-primary">{h.value}</div>
-                      <div className="text-[9px] uppercase font-bold text-gray-500 mt-1">{h.label}</div>
+                      <div className="text-[9px] uppercase font-bold text-blue-100/50 mt-1">{h.label}</div>
                     </div>
                   ))}
                 </div>

@@ -10,7 +10,7 @@ export default function CaseStudyPreview() {
   if (!caseStudy) return null;
 
   return (
-    <section className="py-24 bg-brand-navy text-white overflow-hidden relative">
+    <section className="py-1 bg-brand-navy text-white overflow-hidden relative">
       {/* Background accents */}
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-brand-primary/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
 
@@ -48,7 +48,7 @@ export default function CaseStudyPreview() {
               ))}
             </div>
 
-            <Link to={`/case-studies`} className="inline-flex items-center gap-2 px-6 py-3 bg-white text-brand-navy font-bold rounded-xl hover:bg-gray-100 transition-colors">
+            <Link to={`/case-studies`} className="inline-flex items-center gap-2 px-6 py-3 bg-transparent text-brand-navy font-bold rounded-xl hover:bg-gray-100 transition-colors">
               View Full Case Study <ArrowRight size={18} />
             </Link>
           </div>
@@ -60,12 +60,11 @@ export default function CaseStudyPreview() {
             transition={{ duration: 0.6 }}
             className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-white/5 backdrop-blur-sm aspect-[4/3] flex items-center justify-center"
           >
-            {/* Placeholder for case study image/dashboard visual */}
-            <div className="w-full h-full bg-gradient-to-br from-brand-primary/20 to-brand-navy/80 flex flex-col items-center justify-center p-8 text-center">
-              <Database className="text-brand-primary/50 w-24 h-24 mb-6" />
-              <div className="w-3/4 h-32 bg-white/5 rounded-lg border border-white/10 mb-4 backdrop-blur-md"></div>
-              <div className="w-1/2 h-8 bg-white/5 rounded-lg border border-white/10 backdrop-blur-md"></div>
-            </div>
+            <img 
+              src="/manufacturing-plant.webp" 
+              alt="Manufacturing Digital Transformation"
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+            />
           </motion.div>
         </div>
       </Container>

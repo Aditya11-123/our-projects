@@ -3,55 +3,51 @@ import { Mail } from 'lucide-react';
 
 export default function TeamCard({ member }) {
   return (
-    <article className="bg-white border border-gray-200 hover:border-brand-primary/30 rounded-2xl p-6 flex flex-col text-center overflow-hidden transition-all duration-300 hover:shadow-lg group">
+    <article className="bg-[#0B1018] border border-white/10 rounded-[18px] p-6 lg:p-8 flex flex-col items-center text-center overflow-hidden transition-all duration-300 hover:shadow-[0_4px_30px_rgba(37,99,235,0.15)] hover:-translate-y-1 hover:border-brand-primary/40 group h-full relative">
       
+      {/* Numbering */}
+      <div className="absolute top-6 left-6 text-brand-primary/60 font-display text-sm font-bold group-hover:text-brand-primary transition-colors flex items-center gap-2">
+        <span className="w-px h-3 bg-brand-primary/40 group-hover:bg-brand-primary transition-colors"></span>
+        {member.number}
+      </div>
+
       {/* Avatar wrapper */}
-      <div className="relative mb-6 mx-auto w-24 h-24">
+      <div className="relative mt-8 mb-6 mx-auto w-[120px] h-[120px] lg:w-[130px] lg:h-[130px]">
         <img
           src={member.image}
           alt={member.name}
-          className="w-full h-full rounded-full border-2 border-gray-100 object-cover group-hover:border-brand-primary transition-colors duration-300"
+          className="w-full h-full rounded-full border border-brand-primary/40 object-cover shadow-[0_0_15px_rgba(37,99,235,0.05)] group-hover:border-brand-primary group-hover:shadow-[0_0_20px_rgba(37,99,235,0.25)] group-hover:scale-[1.03] transition-all duration-300"
         />
-        <div className="absolute bottom-0 right-0 w-4 h-4 rounded-full border-2 border-white bg-green-500" title={member.availability}></div>
       </div>
 
       {/* Info details */}
-      <h3 className="font-display text-lg font-bold text-gray-900 group-hover:text-brand-primary transition-colors">
+      <h3 className="font-display text-[19px] lg:text-[20px] font-semibold text-white">
         {member.name}
       </h3>
-      <p className="text-sm font-medium text-brand-primary mt-1">
+      <p className="text-[14px] lg:text-[15px] font-medium text-brand-primary mt-1 mb-4">
         {member.role}
       </p>
       
-      <div className="mt-3 flex items-center justify-center gap-4 text-xs text-gray-500 font-medium">
-        <span>{member.location}</span>
-        <span className="w-1 h-1 rounded-full bg-gray-300"></span>
-        <span>{member.experience}</span>
-      </div>
+      <p className="text-[13px] lg:text-[14px] leading-relaxed text-gray-400 mb-6 max-w-sm">
+        {member.description}
+      </p>
 
-      {/* Skills tags */}
-      <div className="flex flex-wrap gap-1.5 justify-center mt-5 mb-6">
-        {member.languages?.map((lang) => (
-          <span
-            key={lang}
-            className="text-[10px] font-semibold uppercase px-2 py-1 rounded-full bg-gray-100 text-gray-600"
-          >
-            {lang}
-          </span>
-        ))}
+      {/* Focus areas */}
+      <div className="mt-auto mb-8 text-[11px] lg:text-[12px] font-bold tracking-widest uppercase text-gray-500 group-hover:text-brand-primary/80 transition-colors leading-loose">
+        {member.focus}
       </div>
 
       {/* Social links footer */}
-      <div className="flex gap-3 pt-4 border-t border-gray-100 w-full justify-center mt-auto">
+      <div className="flex gap-4 pt-5 border-t border-white/5 w-full justify-center">
         {member.githubUrl && (
           <a
             href={member.githubUrl}
             target="_blank"
             rel="noreferrer"
-            className="w-8 h-8 rounded-full bg-gray-50 hover:bg-brand-primary hover:text-white flex items-center justify-center text-gray-400 transition-colors"
+            className="text-gray-500 hover:text-brand-primary transition-colors"
             aria-label={`${member.name} GitHub`}
           >
-            <GithubIcon size={14} />
+            <GithubIcon size={18} />
           </a>
         )}
         {member.linkedinUrl && (
@@ -59,19 +55,19 @@ export default function TeamCard({ member }) {
             href={member.linkedinUrl}
             target="_blank"
             rel="noreferrer"
-            className="w-8 h-8 rounded-full bg-gray-50 hover:bg-brand-primary hover:text-white flex items-center justify-center text-gray-400 transition-colors"
+            className="text-gray-500 hover:text-brand-primary transition-colors"
             aria-label={`${member.name} LinkedIn`}
           >
-            <LinkedinIcon size={14} />
+            <LinkedinIcon size={18} />
           </a>
         )}
         {member.emailUrl && (
           <a
             href={member.emailUrl}
-            className="w-8 h-8 rounded-full bg-gray-50 hover:bg-brand-primary hover:text-white flex items-center justify-center text-gray-400 transition-colors"
+            className="text-gray-500 hover:text-brand-primary transition-colors"
             aria-label={`Email ${member.name}`}
           >
-            <Mail size={14} />
+            <Mail size={18} />
           </a>
         )}
       </div>

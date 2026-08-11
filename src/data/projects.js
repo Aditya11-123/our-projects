@@ -9,8 +9,9 @@ const defaultProjects = [
     shortDescription: "A modern business-focused website designed to present the brand, products and business information.",
     description: "A modern business-focused website designed to present the brand, products and business information through a clean digital experience.",
     technologies: ["React", "Tailwind CSS", "Vite", "Framer Motion"],
-    image: null,
-    featured: true
+    image: "/bdm-fresh.webp",
+    featured: true,
+    externalLink: "https://bdmfresh.com/"
   },
   {
     id: "ai-salon",
@@ -49,7 +50,8 @@ const defaultProjects = [
     description: "A mobile-focused digital experience for Indian Cocktail Academy, demonstrating mobile application development and user-focused content presentation.",
     technologies: ["React Native", "Firebase", "Node.js"],
     image: null,
-    featured: true
+    featured: true,
+    externalLink: "https://indian-cocktail-academy.pages.dev/"
   },
   {
     id: "manufacturing-digital-transformation",

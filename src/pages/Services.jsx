@@ -16,7 +16,7 @@ import FinalCTA from '../components/services/FinalCTA';
 
 export default function Services() {
   return (
-    <div className="flex flex-col w-full bg-bg-primary">
+    <div className="flex flex-col w-full bg-transparent">
       <ServiceHero />
       <ServiceCapabilityStrip />
       <ServiceChallenges />

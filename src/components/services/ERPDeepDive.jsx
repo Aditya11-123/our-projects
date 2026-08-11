@@ -38,7 +38,7 @@ export default function ERPDeepDive() {
   ];
 
   return (
-    <section id="erp-details" className="py-24 bg-[#0B1220] overflow-hidden relative">
+    <section id="erp-details" className="py-1 bg-[#0B1220] overflow-hidden relative">
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-primary/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3"></div>
       
       <Container className="relative z-10">
@@ -49,60 +49,21 @@ export default function ERPDeepDive() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
-          {/* Left: CSS ERP Dashboard Mockup */}
+          {/* Left: ERP Dashboard Image */}
           <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="w-full bg-[#111827] border border-white/10 rounded-2xl p-4 shadow-2xl relative"
+            className="w-full relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 group"
           >
-            {/* Top Bar */}
-            <div className="flex justify-between items-center border-b border-white/5 pb-4 mb-4">
-              <div className="flex gap-2">
-                <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
-                <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
-                <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
-              </div>
-              <div className="w-32 h-6 bg-white/5 rounded-md"></div>
-            </div>
-            
-            {/* Main Content Area */}
-            <div className="flex gap-4">
-              {/* Sidebar */}
-              <div className="w-1/4 flex flex-col gap-3 border-r border-white/5 pr-4 hidden sm:flex">
-                <div className="h-8 bg-brand-primary/20 rounded-md w-full"></div>
-                <div className="h-8 bg-white/5 rounded-md w-full"></div>
-                <div className="h-8 bg-white/5 rounded-md w-full"></div>
-                <div className="h-8 bg-white/5 rounded-md w-full"></div>
-                <div className="h-8 bg-white/5 rounded-md w-full"></div>
-              </div>
-              
-              {/* Dashboard Content */}
-              <div className="flex-1 flex flex-col gap-4">
-                {/* Stats Row */}
-                <div className="grid grid-cols-3 gap-3">
-                  <div className="h-20 bg-white/5 border border-white/5 rounded-xl"></div>
-                  <div className="h-20 bg-white/5 border border-white/5 rounded-xl"></div>
-                  <div className="h-20 bg-brand-primary/10 border border-brand-primary/20 rounded-xl"></div>
-                </div>
-                {/* Chart Area */}
-                <div className="h-40 bg-white/5 border border-white/5 rounded-xl flex items-end p-4 gap-2">
-                  <div className="w-full bg-brand-cyan/20 rounded-t-sm h-[40%]"></div>
-                  <div className="w-full bg-brand-cyan/20 rounded-t-sm h-[60%]"></div>
-                  <div className="w-full bg-brand-cyan/40 rounded-t-sm h-[30%]"></div>
-                  <div className="w-full bg-brand-primary/60 rounded-t-sm h-[80%]"></div>
-                  <div className="w-full bg-brand-primary/80 rounded-t-sm h-[100%]"></div>
-                  <div className="w-full bg-brand-primary rounded-t-sm h-[70%]"></div>
-                </div>
-                {/* List Area */}
-                <div className="h-24 bg-white/5 border border-white/5 rounded-xl flex flex-col gap-2 p-3">
-                  <div className="h-4 bg-white/10 rounded w-full"></div>
-                  <div className="h-4 bg-white/5 rounded w-3/4"></div>
-                  <div className="h-4 bg-white/5 rounded w-5/6"></div>
-                </div>
-              </div>
-            </div>
+            <img 
+              src="/erp-dashboard.jpg" 
+              alt="Enterprise Resource Planning Dashboard"
+              className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+            {/* Subtle overlay glow to blend with the dark theme */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-[#0B1220]/80 via-transparent to-transparent pointer-events-none mix-blend-multiply"></div>
           </motion.div>
 
           {/* Right: Modules */}

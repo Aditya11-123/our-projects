@@ -14,7 +14,7 @@ export const services = [
       'Deployment & SSL Configuration'
     ],
     icon: 'Monitor',
-    path: '/services/website-development'
+    path: '/services'
   },
   {
     id: 'erp-solutions',
@@ -30,7 +30,7 @@ export const services = [
       'Workflow Configuration & User Training'
     ],
     icon: 'Database',
-    path: '/services/erp-solutions'
+    path: '/services'
   },
   {
     id: 'mobile-app-development',
@@ -46,7 +46,7 @@ export const services = [
       'Automated Testing & App Store Deployment'
     ],
     icon: 'Smartphone',
-    path: '/services/mobile-app-development'
+    path: '/services'
   },
   {
     id: 'digital-marketing',
@@ -62,7 +62,7 @@ export const services = [
       'Monthly Performance Reporting'
     ],
     icon: 'TrendingUp',
-    path: '/services/digital-marketing'
+    path: '/services'
   }
 ];
 

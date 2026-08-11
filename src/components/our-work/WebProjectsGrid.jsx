@@ -7,14 +7,14 @@ export default function WebProjectsGrid({ projects }) {
   if (!projects || projects.length === 0) return null;
 
   return (
-    <section className="py-12 md:py-16 bg-gray-50 border-t border-gray-100 scroll-mt-[100px]" id="web-projects">
+    <section className="py-1 md:py-1 bg-transparent border-t border-white/10 scroll-mt-[100px]" id="web-projects">
       <Container>
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
-            <h2 className="text-2xl font-display font-bold text-gray-900 mb-2">
+            <h2 className="text-2xl font-display font-bold text-white mb-2">
               Web Experiences
             </h2>
-            <p className="text-gray-600 text-sm">
+            <p className="text-blue-100/70 text-sm">
               Business-focused websites designed to communicate clearly and create a stronger digital presence.
             </p>
           </div>
@@ -25,10 +25,10 @@ export default function WebProjectsGrid({ projects }) {
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {projects.map((project, idx) => (
-            <Link key={project.id} to={`/our-work/${project.slug}`} className="group bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col hover:shadow-md hover:border-brand-primary/30 transition-all">
+            <Link key={project.id} to={`/our-work/${project.slug}`} className="group bg-transparent rounded-2xl shadow-sm border border-white/10 overflow-hidden flex flex-col hover:shadow-md hover:border-brand-primary/30 transition-all">
                
                {/* Thumbnail Placeholder (Since we don't have images yet, use a sleek dark CSS placeholder to match the image style) */}
-               <div className="w-full h-[240px] bg-[#0B1220] relative overflow-hidden flex items-center justify-center p-6 border-b border-gray-100 group-hover:bg-[#0f172a] transition-colors">
+               <div className="w-full h-[240px] bg-[#0B1220] relative overflow-hidden flex items-center justify-center p-6 border-b border-white/10 group-hover:bg-[#0f172a] transition-colors">
                   <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_#2563EB2A_0%,_transparent_70%)]"></div>
                   
                   {/* Subtle abstract UI element inside the thumbnail to mimic the dark imagery in the design */}
@@ -60,9 +60,9 @@ export default function WebProjectsGrid({ projects }) {
                     }`}>
                       {project.status === 'internal' ? 'INTERNAL PROJECT' : 'COMPLETED'}
                     </span>
-                    <h3 className="text-xl font-bold text-gray-900 mb-1 group-hover:text-brand-primary transition-colors">{project.title}</h3>
-                    <div className="text-xs font-bold text-gray-500 mb-3">{project.type}</div>
-                    <p className="text-gray-600 text-xs leading-relaxed line-clamp-2">
+                    <h3 className="text-xl font-bold text-white mb-1 group-hover:text-brand-primary transition-colors">{project.title}</h3>
+                    <div className="text-xs font-bold text-blue-100/50 mb-3">{project.type}</div>
+                    <p className="text-blue-100/70 text-xs leading-relaxed line-clamp-2">
                       {project.description}
                     </p>
                  </div>
@@ -70,7 +70,7 @@ export default function WebProjectsGrid({ projects }) {
                  <div className="mt-auto">
                     <div className="flex flex-wrap gap-2 mb-6">
                       {project.technologies?.slice(0, 3).map((tech, i) => (
-                        <span key={i} className="px-2.5 py-1 bg-white border border-gray-200 text-[10px] font-bold rounded text-gray-700">{tech}</span>
+                        <span key={i} className="px-2.5 py-1 bg-transparent border border-white/10 shadow-[0_4px_24px_rgba(37,99,235,0.15)] hover:shadow-[0_8px_32px_rgba(37,99,235,0.4)] transition-all duration-300 text-[10px] font-bold rounded text-gray-200">{tech}</span>
                       ))}
                     </div>
                     

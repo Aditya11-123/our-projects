@@ -4,7 +4,7 @@ import { MessageSquare } from 'lucide-react';
 
 export default function Testimonials() {
   return (
-    <section className="py-24 bg-white border-t border-gray-100">
+    <section className="py-1 bg-transparent border-t border-white/10">
       <Container>
         <div className="max-w-4xl mx-auto bg-[#0B1220] rounded-3xl p-10 md:p-16 text-center relative overflow-hidden shadow-xl">
           <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-primary/20 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2"></div>
