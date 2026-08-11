@@ -5,7 +5,6 @@ import Home from './pages/Home';
 import Projects from './pages/Projects';
 import ProjectDetail from './pages/ProjectDetail';
 import Team from './pages/Team';
-import About from './pages/About';
 import Services from './pages/Services';
 import OurWork from './pages/OurWork';
 import CaseStudies from './pages/CaseStudies';
@@ -23,11 +22,11 @@ function AppContent() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />
-          {/* We will add /services/:slug later */}
+          <Route path="/services/:slug" element={<Services />} />
           <Route path="/our-work" element={<OurWork />} />
+          <Route path="/our-work/:slug" element={<OurWork />} />
           <Route path="/case-studies" element={<CaseStudies />} />
-          {/* We will add /case-studies/:slug later */}
-          <Route path="/about" element={<About />} />
+          <Route path="/case-studies/:slug" element={<CaseStudies />} />
           <Route path="/team" element={<Team />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />

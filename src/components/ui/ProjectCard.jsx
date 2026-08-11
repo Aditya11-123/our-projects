@@ -57,16 +57,18 @@ export default function ProjectCard({ project, featured = false }) {
     : { to: `/our-work/${project.slug}` };
 
   return (
-    <Wrapper {...wrapperProps} className={`group flex flex-col bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md hover:border-brand-primary/30 transition-all h-full ${featured ? 'md:col-span-2 lg:col-span-3 lg:flex-row' : ''}`}>
+    <Wrapper {...wrapperProps} className={`group flex flex-col bg-[#0B1018] rounded-2xl overflow-hidden border border-white/10 shadow-lg hover:shadow-2xl hover:border-brand-primary/40 transition-all h-full ${featured ? 'md:col-span-2 lg:col-span-3 lg:flex-row' : ''}`}>
       
       {/* Thumbnail */}
-      <div className={`relative bg-gray-100 overflow-hidden shrink-0 ${featured ? 'w-full lg:w-[60%] lg:border-r border-gray-100' : 'aspect-[16/10] w-full'}`}>
+      <div className={`relative bg-[#070B12] pt-2 px-2 md:pt-2.5 md:px-2.5 pb-0 overflow-hidden shrink-0 border-b border-white/10 ${featured ? 'w-full lg:w-[60%] lg:border-r border-white/10' : 'aspect-[16/10] w-full'}`}>
         {project.image ? (
-          <img 
-            src={project.image} 
-            alt={project.title} 
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-          />
+          <div className="w-full h-full rounded-t-xl rounded-b-none overflow-hidden bg-[#04060A] relative shadow-inner">
+            <img 
+              src={project.image} 
+              alt={project.title} 
+              className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500 rounded-t-xl rounded-b-none"
+            />
+          </div>
         ) : (
           <FallbackImage />
         )}
@@ -76,7 +78,7 @@ export default function ProjectCard({ project, featured = false }) {
         </div>
         
         {project.image && (
-          <div className="absolute top-4 right-4 z-20 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-lg flex items-center gap-2 text-[10px] font-bold text-gray-800 shadow-sm border border-gray-200/50">
+          <div className="absolute top-4 right-4 z-20 bg-[#0B1220]/90 backdrop-blur-sm px-3 py-1.5 rounded-lg flex items-center gap-2 text-[10px] font-bold text-white shadow-sm border border-white/10">
             {getCategoryIcon(project.category)}
             <span className="uppercase tracking-wider">{project.category}</span>
           </div>
@@ -96,23 +98,23 @@ export default function ProjectCard({ project, featured = false }) {
            </span>
         )}
         
-        <h3 className={`${featured ? 'text-2xl lg:text-3xl' : 'text-xl'} font-bold text-gray-900 mb-3 leading-tight group-hover:text-brand-primary transition-colors`}>
+        <h3 className={`${featured ? 'text-2xl lg:text-3xl' : 'text-xl'} font-bold text-white mb-3 leading-tight group-hover:text-brand-primary transition-colors`}>
           {project.title}
         </h3>
         
-        <p className={`text-gray-600 text-sm leading-relaxed mb-8 flex-grow ${featured ? 'text-base mb-10' : 'line-clamp-2'}`}>
+        <p className={`text-slate-400 text-sm leading-relaxed mb-8 flex-grow ${featured ? 'text-base mb-10' : 'line-clamp-2'}`}>
           {project.description}
         </p>
         
         {/* Footer / Tech Stack */}
-        <div className="flex items-center justify-between pt-5 border-t border-gray-100 mt-auto">
-          <div className="flex flex-wrap gap-x-3 gap-y-2 text-xs font-medium text-gray-500">
+        <div className="flex items-center justify-between pt-5 border-t border-white/10 mt-auto">
+          <div className="flex flex-wrap gap-x-2 gap-y-2 text-xs font-medium">
             {project.technologies?.slice(0, featured ? 4 : 3).map((tech, idx) => (
-              <span key={idx}>{tech}</span>
+              <span key={idx} className="px-2 py-0.5 bg-white/5 border border-white/10 text-slate-300 rounded text-[11px]">{tech}</span>
             ))}
-            {project.technologies?.length > (featured ? 4 : 3) && <span className="text-brand-primary">+{project.technologies.length - (featured ? 4 : 3)}</span>}
+            {project.technologies?.length > (featured ? 4 : 3) && <span className="text-brand-primary text-xs self-center">+{project.technologies.length - (featured ? 4 : 3)}</span>}
           </div>
-          <div className="flex items-center justify-center w-8 h-8 rounded-full bg-gray-50 text-gray-400 group-hover:bg-brand-primary group-hover:text-white transition-colors shrink-0">
+          <div className="flex items-center justify-center w-8 h-8 rounded-full bg-brand-primary/10 text-brand-primary group-hover:bg-brand-primary group-hover:text-white transition-colors shrink-0">
             <ArrowRight size={14} />
           </div>
         </div>

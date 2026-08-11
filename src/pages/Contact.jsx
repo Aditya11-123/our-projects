@@ -110,7 +110,9 @@ export default function Contact() {
               </div>
               <div>
                 <h4 className="text-[11px] font-bold uppercase tracking-widest text-brand-primary mb-2">PHONE</h4>
-                <p className="text-[15px] font-medium text-white">+91 123 456 7890</p>
+                <a href="tel:+918658549342" className="text-[15px] font-medium text-white hover:text-brand-primary transition-colors">
+                  +91 86585 49342
+                </a>
                 <p className="text-[13px] text-gray-500 mt-1">Mon-Fri, 9am - 6pm</p>
               </div>
             </motion.div>
@@ -212,42 +214,7 @@ export default function Contact() {
 
         </div>
 
-        {/* Office / Location Section */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-          className="border-t border-white/5 pt-[60px] grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
-        >
-          <div>
-            <h2 className="text-[11px] lg:text-[12px] font-bold uppercase tracking-widest text-brand-primary mb-3">OUR OFFICE</h2>
-            <h3 className="font-display font-bold text-3xl md:text-4xl text-white mb-6">Visit Us</h3>
-            <p className="text-gray-400 text-[15px] leading-relaxed mb-8 max-w-[400px]">
-              We'd love to meet you. Our office is located in Bhubaneswar, Odisha.
-            </p>
-            <a href="#" className="inline-flex items-center gap-2 px-6 py-3 bg-[#0B1018] border border-white/10 text-white font-bold text-[13px] tracking-wider uppercase rounded-[10px] hover:border-brand-primary/40 hover:bg-white/5 transition-all">
-              Get Directions <ArrowRight size={16} />
-            </a>
-          </div>
 
-          {/* Dark Map Placeholder */}
-          <div className="w-full h-[300px] md:h-[400px] bg-[#080D15] rounded-[20px] border border-white/10 relative overflow-hidden flex items-center justify-center">
-            {/* Very simple abstract map representation for the dark theme */}
-            <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '30px 30px' }}></div>
-            <div className="absolute w-[2px] h-full bg-brand-primary/5 left-1/3"></div>
-            <div className="absolute w-full h-[2px] bg-brand-primary/5 top-1/2"></div>
-            
-            <div className="relative z-10 flex flex-col items-center">
-              <div className="w-12 h-12 bg-brand-primary/20 rounded-full flex items-center justify-center mb-2 animate-pulse">
-                <MapPin size={24} className="text-brand-primary" />
-              </div>
-              <div className="bg-[#0B1018] border border-white/10 px-4 py-2 rounded-lg shadow-xl">
-                <span className="text-white font-bold text-[13px]">S COMPANY</span>
-              </div>
-            </div>
-          </div>
-        </motion.div>
 
       </Container>
     </main>

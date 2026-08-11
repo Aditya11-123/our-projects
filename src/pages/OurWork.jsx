@@ -25,6 +25,8 @@ export default function OurWork() {
   const tejas = getProjectById('tejas-investment-solutions');
   const cocktailAcademy = getProjectById('indian-cocktail-academy');
   const erpProposal = getProjectById('manufacturing-digital-transformation');
+  const shyamPlastic = getProjectById('shyam-plastic');
+  const hrKamalini = getProjectById('hr-kamalini');
   const b2bMarketing = getProjectById('b2b-manufacturing-growth');
   const localMarketing = getProjectById('local-business-growth');
 
@@ -86,7 +88,7 @@ export default function OurWork() {
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ duration: 0.4, ease: "easeOut" }}
             >
-              <DigitalMarketingShowcase projects={[b2bMarketing, localMarketing]} />
+              <DigitalMarketingShowcase projects={[shyamPlastic, hrKamalini, b2bMarketing, localMarketing]} />
             </motion.div>
           )}
         </AnimatePresence>

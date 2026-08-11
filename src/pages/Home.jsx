@@ -28,10 +28,10 @@ export default function Home() {
     <main className="min-h-screen">
       <Hero />
       <CapabilityStrip />
+      <FeaturedProjects />
       <ServicesPreview />
       <BusinessChallenges />
       <Achievements />
-      <FeaturedProjects />
       <CaseStudyPreview />
       <WhyChooseUs />
       <EngineeringProcess />

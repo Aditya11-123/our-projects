@@ -24,8 +24,8 @@ export default function ServicesPreview() {
             const Icon = iconMap[service.icon];
             return (
               <div key={service.id} className="bg-white/5 border border-white/10 backdrop-blur-sm rounded-2xl p-6 transition-all duration-200 hover:-translate-y-1 hover:border-brand-primary hover:shadow-lg flex flex-col group">
-                <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-brand-primary mb-6">
-                  <Icon size={24} />
+                <div className="w-12 h-12 rounded-full bg-brand-primary/10 flex items-center justify-center text-brand-primary mb-6 group-hover:bg-brand-primary group-hover:text-white transition-all duration-300">
+                  <Icon size={24} strokeWidth={1.5} />
                 </div>
                 <h4 className="text-lg font-bold text-white mb-3">{service.title}</h4>
                 <p className="text-sm text-blue-100/70 mb-6 flex-grow">{service.shortDescription}</p>

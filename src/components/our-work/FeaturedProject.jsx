@@ -43,72 +43,80 @@ export default function FeaturedProject({ project }) {
                   <div className="w-2 h-2 rounded-full bg-gray-300"></div>
                 </div>
                 {/* Website content */}
-                <div className="flex-1 bg-gradient-to-br from-[#F5F9F4] to-white relative p-8 flex flex-col">
-                   <div className="flex justify-between items-center mb-12">
-                      <div className="flex items-center gap-2">
-                         <div className="w-6 h-6 bg-green-600 rounded-md flex items-center justify-center text-white"><Leaf size={14}/></div>
-                         <span className="font-bold text-white tracking-tight">BDM FRESH</span>
+                {project.image ? (
+                   <img 
+                     src={project.image} 
+                     alt={project.title} 
+                     className="flex-1 w-full h-full object-cover object-top" 
+                   />
+                ) : (
+                   <div className="flex-1 bg-gradient-to-br from-[#F5F9F4] to-white relative p-8 flex flex-col">
+                      <div className="flex justify-between items-center mb-12">
+                         <div className="flex items-center gap-2">
+                            <div className="w-6 h-6 bg-green-600 rounded-md flex items-center justify-center text-white"><Leaf size={14}/></div>
+                            <span className="font-bold text-white tracking-tight">BDM FRESH</span>
+                         </div>
+                         <div className="flex gap-6 text-[10px] font-bold text-blue-100/70 hidden sm:flex">
+                           <span>Home</span>
+                           <span>Products</span>
+                           <span>About Us</span>
+                           <span>Contact</span>
+                         </div>
+                         <div className="px-4 py-2 bg-green-600 text-white text-[10px] font-bold rounded-full">
+                           Order Fresh
+                         </div>
                       </div>
-                      <div className="flex gap-6 text-[10px] font-bold text-blue-100/70 hidden sm:flex">
-                        <span>Home</span>
-                        <span>Products</span>
-                        <span>About Us</span>
-                        <span>Contact</span>
+                      
+                      <div className="flex-1 flex items-center">
+                        <div className="max-w-[50%]">
+                          <h1 className="text-4xl lg:text-5xl font-bold text-green-900 leading-tight mb-4 tracking-tight">
+                            Fresh Produce.<br/>Better Future.
+                          </h1>
+                          <p className="text-blue-100/70 text-[11px] mb-6">
+                            Delivering farm-fresh quality produce with trust and transparency.
+                          </p>
+                          <div className="px-4 py-2 bg-green-600 text-white text-[10px] font-bold rounded-full inline-block">
+                             Explore Products
+                          </div>
+                        </div>
                       </div>
-                      <div className="px-4 py-2 bg-green-600 text-white text-[10px] font-bold rounded-full">
-                        Order Fresh
-                      </div>
-                   </div>
-                   
-                   <div className="flex-1 flex items-center">
-                     <div className="max-w-[50%]">
-                       <h1 className="text-4xl lg:text-5xl font-bold text-green-900 leading-tight mb-4 tracking-tight">
-                         Fresh Produce.<br/>Better Future.
-                       </h1>
-                       <p className="text-blue-100/70 text-[11px] mb-6">
-                         Delivering farm-fresh quality produce with trust and transparency.
-                       </p>
-                       <div className="px-4 py-2 bg-green-600 text-white text-[10px] font-bold rounded-full inline-block">
-                          Explore Products
-                       </div>
-                     </div>
-                   </div>
 
-                   {/* Features bottom row */}
-                   <div className="absolute bottom-6 left-8 right-8 bg-white/80 backdrop-blur-md border border-white p-4 rounded-xl flex justify-between shadow-lg">
-                      <div className="flex items-center gap-3">
-                         <div className="w-8 h-8 rounded-full bg-green-50 text-green-600 flex items-center justify-center"><CheckCircle2 size={14}/></div>
-                         <div>
-                            <div className="text-[9px] font-bold text-white">100% Organic</div>
-                            <div className="text-[8px] text-blue-100/50">Quality Assured</div>
+                      {/* Features bottom row */}
+                      <div className="absolute bottom-6 left-8 right-8 bg-white/80 backdrop-blur-md border border-white p-4 rounded-xl flex justify-between shadow-lg">
+                         <div className="flex items-center gap-3">
+                            <div className="w-8 h-8 rounded-full bg-green-50 text-green-600 flex items-center justify-center"><CheckCircle2 size={14}/></div>
+                            <div>
+                               <div className="text-[9px] font-bold text-white">100% Organic</div>
+                               <div className="text-[8px] text-blue-100/50">Quality Assured</div>
+                            </div>
+                         </div>
+                         <div className="flex items-center gap-3">
+                            <div className="w-8 h-8 rounded-full bg-green-50 text-green-600 flex items-center justify-center"><Leaf size={14}/></div>
+                            <div>
+                               <div className="text-[9px] font-bold text-white">Farm Direct</div>
+                               <div className="text-[8px] text-blue-100/50">Fresh & Healthy</div>
+                         </div>
+                         </div>
+                         <div className="flex items-center gap-3">
+                            <div className="w-8 h-8 rounded-full bg-green-50 text-green-600 flex items-center justify-center"><Truck size={14}/></div>
+                            <div>
+                               <div className="text-[9px] font-bold text-white">Fast Delivery</div>
+                               <div className="text-[8px] text-blue-100/50">On Time</div>
+                            </div>
+                         </div>
+                         <div className="flex items-center gap-3 hidden md:flex">
+                            <div className="w-8 h-8 rounded-full bg-green-50 text-green-600 flex items-center justify-center"><ShieldCheck size={14}/></div>
+                            <div>
+                               <div className="text-[9px] font-bold text-white">Trusted By</div>
+                               <div className="text-[8px] text-blue-100/50">Happy Customers</div>
+                            </div>
                          </div>
                       </div>
-                      <div className="flex items-center gap-3">
-                         <div className="w-8 h-8 rounded-full bg-green-50 text-green-600 flex items-center justify-center"><Leaf size={14}/></div>
-                         <div>
-                            <div className="text-[9px] font-bold text-white">Farm Direct</div>
-                            <div className="text-[8px] text-blue-100/50">Fresh & Healthy</div>
-                         </div>
-                      </div>
-                      <div className="flex items-center gap-3">
-                         <div className="w-8 h-8 rounded-full bg-green-50 text-green-600 flex items-center justify-center"><Truck size={14}/></div>
-                         <div>
-                            <div className="text-[9px] font-bold text-white">Fast Delivery</div>
-                            <div className="text-[8px] text-blue-100/50">On Time</div>
-                         </div>
-                      </div>
-                      <div className="flex items-center gap-3 hidden md:flex">
-                         <div className="w-8 h-8 rounded-full bg-green-50 text-green-600 flex items-center justify-center"><ShieldCheck size={14}/></div>
-                         <div>
-                            <div className="text-[9px] font-bold text-white">Trusted By</div>
-                            <div className="text-[8px] text-blue-100/50">Happy Customers</div>
-                         </div>
-                      </div>
-                   </div>
 
-                   {/* Veg Image Placeholder right side */}
-                   <div className="absolute right-[-10%] top-1/2 -translate-y-1/2 w-[60%] aspect-square bg-[url('https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=800')] bg-cover bg-center rounded-full shadow-2xl border-8 border-white"></div>
-                </div>
+                      {/* Veg Image Placeholder right side */}
+                      <div className="absolute right-[-10%] top-1/2 -translate-y-1/2 w-[60%] aspect-square bg-[url('https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=800')] bg-cover bg-center rounded-full shadow-2xl border-8 border-white"></div>
+                   </div>
+                )}
              </div>
           </div>
 

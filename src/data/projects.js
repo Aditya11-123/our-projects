@@ -23,8 +23,9 @@ const defaultProjects = [
     shortDescription: "An AI-focused salon website concept demonstrating intelligent digital experiences.",
     description: "An AI-focused salon website concept demonstrating how modern business websites can combine service presentation with intelligent digital experiences.",
     technologies: ["React", "Node.js", "OpenAI API", "Tailwind CSS"],
-    image: null,
-    featured: false
+    image: "/ai-salon.webp",
+    featured: false,
+    externalLink: "https://ai-salon.webworks.co.ke/"
   },
   {
     id: "tejas-investment-solutions",
@@ -36,8 +37,9 @@ const defaultProjects = [
     shortDescription: "A professional digital presence designed for a financial services business.",
     description: "A professional digital presence designed for a financial services business, focusing on clear service communication, credibility and customer enquiries.",
     technologies: ["React", "Next.js", "Tailwind CSS", "Framer Motion"],
-    image: null,
-    featured: true
+    image: "/tejas.webp",
+    featured: true,
+    externalLink: "https://app.tejasimf.com/"
   },
   {
     id: "indian-cocktail-academy",
@@ -49,7 +51,7 @@ const defaultProjects = [
     shortDescription: "A mobile-focused digital experience demonstrating user-focused content presentation.",
     description: "A mobile-focused digital experience for Indian Cocktail Academy, demonstrating mobile application development and user-focused content presentation.",
     technologies: ["React Native", "Firebase", "Node.js"],
-    image: null,
+    image: "/ica.webp",
     featured: true,
     externalLink: "https://indian-cocktail-academy.pages.dev/"
   },
@@ -65,6 +67,34 @@ const defaultProjects = [
     technologies: ["React", "Node.js", "PostgreSQL", "React Native"],
     image: null,
     featured: true
+  },
+  {
+    id: "shyam-plastic",
+    slug: "shyam-plastic",
+    title: "Shyam Plastic",
+    category: "Digital Marketing",
+    status: "completed",
+    type: "Social Media Handling & Brand Growth",
+    shortDescription: "Complete social media management, brand creative content, and digital audience growth.",
+    description: "End-to-end social media handling, brand positioning, creative content production, and audience engagement strategy for Shyam Plastic.",
+    technologies: ["Social Media Handling", "Content Strategy", "Creative Design", "Instagram Growth"],
+    image: null,
+    featured: true,
+    externalLink: "https://www.instagram.com/shyamplastic_?igsh=M2M0OTR1b3dwN2lj"
+  },
+  {
+    id: "hr-kamalini",
+    slug: "hr-kamalini",
+    title: "HR Kamalini",
+    category: "Digital Marketing",
+    status: "completed",
+    type: "Personal Branding & Social Media Growth",
+    shortDescription: "Personal brand positioning, professional content strategy, and social media audience growth.",
+    description: "End-to-end personal branding, thought leadership content strategy, social media management, and community engagement for HR Kamalini.",
+    technologies: ["Personal Branding", "Content Creation", "Social Media Strategy", "Instagram Growth"],
+    image: null,
+    featured: true,
+    externalLink: "https://www.instagram.com/hrkamalini?igsh=NTR1aHpnZ24zeGlx"
   },
   {
     id: "b2b-manufacturing-growth",
