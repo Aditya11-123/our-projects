@@ -27,7 +27,6 @@ function AppContent() {
           <Route path="/our-work/:slug" element={<OurWork />} />
           <Route path="/case-studies" element={<CaseStudies />} />
           <Route path="/case-studies/:slug" element={<CaseStudies />} />
-          <Route path="/team" element={<Team />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

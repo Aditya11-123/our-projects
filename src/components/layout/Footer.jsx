@@ -42,7 +42,6 @@ export default function Footer() {
           <div>
             <h4 className="font-display font-bold text-sm text-white mb-6">Company</h4>
             <ul className="flex flex-col gap-3">
-              <li><Link to="/team" className="text-slate-400 hover:text-white transition-colors">Our Team</Link></li>
               <li><Link to="/contact" className="text-slate-400 hover:text-white transition-colors">Contact</Link></li>
             </ul>
           </div>

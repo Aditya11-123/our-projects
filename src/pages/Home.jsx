@@ -39,10 +39,6 @@ export default function Home() {
         <Testimonials />
       </Suspense>
       
-      <Suspense fallback={<SectionSkeleton />}>
-        <MeetOurTeam />
-      </Suspense>
-      
       <CTA />
     </main>
   );
