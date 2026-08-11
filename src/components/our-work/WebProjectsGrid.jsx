@@ -23,82 +23,80 @@ export default function WebProjectsGrid({ projects }) {
           </Link>
         </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {projects.map((project, idx) => {
-            const isExternal = !!project.externalLink;
-            const CardWrapper = isExternal ? 'a' : Link;
-            const cardProps = isExternal 
-              ? { href: project.externalLink, target: "_blank", rel: "noopener noreferrer" }
-              : { to: `/our-work/${project.slug}` };
+        <div className="flex flex-col gap-16">
+          {projects.map((project) => (
+            <div key={project.id} className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+              
+              {/* Left Details */}
+              <div className="lg:col-span-4">
+                <span className="text-[10px] font-bold uppercase tracking-widest text-brand-primary mb-4 block">CLIENT PROJECT</span>
+                <div className="mb-6">
+                  <span className="inline-block px-3 py-1 bg-emerald-100 text-emerald-800 text-[10px] font-bold uppercase tracking-wider rounded-sm shadow-sm border border-emerald-200 mb-4">
+                    {project.status === 'internal' ? 'INTERNAL PROJECT' : 'COMPLETED'}
+                  </span>
+                  <h2 className="text-4xl font-display font-bold text-white mb-2">{project.title}</h2>
+                  <h3 className="text-lg font-bold text-gray-100 mb-4">{project.type}</h3>
+                </div>
+                
+                <p className="text-blue-100/70 mb-8 text-sm leading-relaxed">
+                  {project.description}
+                </p>
+                
+                <div className="flex flex-wrap gap-2 mb-10">
+                  {project.technologies?.map((tech, i) => (
+                    <span key={i} className="px-3 py-1.5 bg-transparent border border-white/10 shadow-[0_4px_24px_rgba(37,99,235,0.15)] hover:shadow-[0_8px_32px_rgba(37,99,235,0.4)] transition-all duration-300 text-xs font-medium rounded text-gray-200 shadow-sm">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+                
+                {project.externalLink ? (
+                  <a 
+                    href={project.externalLink} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="text-brand-primary font-bold text-sm inline-flex items-center hover:text-brand-primaryHover transition-colors"
+                  >
+                    View Live Website <ArrowRight size={16} className="ml-2" />
+                  </a>
+                ) : (
+                  <Link 
+                    to={`/our-work/${project.slug}`}
+                    className="text-brand-primary font-bold text-sm inline-flex items-center hover:text-brand-primaryHover transition-colors"
+                  >
+                    View Project <ArrowRight size={16} className="ml-2" />
+                  </Link>
+                )}
+              </div>
 
-            return (
-              <CardWrapper key={project.id} {...cardProps} className="group bg-transparent rounded-2xl shadow-sm border border-white/10 overflow-hidden flex flex-col hover:shadow-md hover:border-brand-primary/30 transition-all">
-                 
-                  {/* Thumbnail */}
-                  <div className="w-full h-[240px] bg-[#0B1220] relative overflow-hidden flex items-center justify-center border-b border-white/10 group-hover:bg-[#0f172a] transition-colors">
+              {/* Right Browser Mockup Frame */}
+              <div className="lg:col-span-8">
+                <div className="w-full bg-transparent rounded-3xl shadow-[0_20px_50px_-12px_rgba(0,0,0,0.15)] border border-white/10 overflow-hidden relative aspect-[16/10] flex flex-col group">
+                  {/* Browser top bar */}
+                  <div className="h-6 bg-[#0B1018] flex items-center px-4 gap-1.5 border-b border-white/10 shrink-0">
+                    <div className="w-2 h-2 rounded-full bg-gray-600"></div>
+                    <div className="w-2 h-2 rounded-full bg-gray-600"></div>
+                    <div className="w-2 h-2 rounded-full bg-gray-600"></div>
+                  </div>
+                  {/* Screenshot display */}
+                  <div className="flex-1 bg-[#05070B] relative overflow-hidden flex items-center justify-center">
                     {project.image ? (
                       <img 
                         src={project.image} 
                         alt={project.title} 
-                        className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" 
+                        className="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-500" 
                       />
                     ) : (
-                      <>
-                        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_#2563EB2A_0%,_transparent_70%)]"></div>
-                        
-                        {/* Subtle abstract UI element inside the thumbnail to mimic the dark imagery in the design */}
-                        <div className="relative z-10 w-full max-w-[280px] h-full bg-white/5 rounded-t-xl border-x border-t border-white/10 flex flex-col p-4">
-                           <div className="flex justify-between items-center mb-6">
-                              <div className="flex items-center gap-2">
-                                <div className="w-4 h-4 rounded-full bg-brand-cyan"></div>
-                                <div className="w-16 h-2 bg-white/20 rounded"></div>
-                              </div>
-                              <div className="flex gap-2">
-                                 <div className="w-8 h-1 bg-white/10 rounded"></div>
-                                 <div className="w-8 h-1 bg-white/10 rounded"></div>
-                                 <div className="w-8 h-1 bg-white/10 rounded"></div>
-                              </div>
-                           </div>
-                           <div className="w-3/4 h-6 bg-white/20 rounded mb-2"></div>
-                           <div className="w-1/2 h-4 bg-white/10 rounded mb-6"></div>
-                           <div className="w-24 h-6 bg-brand-primary rounded"></div>
-                        </div>
-                      </>
+                      <div className="w-full h-full bg-[#0B1220] flex items-center justify-center text-gray-500 text-sm">
+                        {project.title} Preview
+                      </div>
                     )}
                   </div>
+                </div>
+              </div>
 
-                 {/* Content */}
-                 <div className="p-6 md:p-8 flex-1 flex flex-col">
-                   <div className="mb-4">
-                      <span className={`inline-block px-3 py-1 text-[10px] font-bold uppercase tracking-wider rounded-sm shadow-sm border mb-4 ${
-                        project.status === 'internal' 
-                          ? 'bg-blue-50 text-blue-800 border-blue-200'
-                          : 'bg-emerald-50 text-emerald-800 border-emerald-200'
-                      }`}>
-                        {project.status === 'internal' ? 'INTERNAL PROJECT' : 'COMPLETED'}
-                      </span>
-                      <h3 className="text-xl font-bold text-white mb-1 group-hover:text-brand-primary transition-colors">{project.title}</h3>
-                      <div className="text-xs font-bold text-blue-100/50 mb-3">{project.type}</div>
-                      <p className="text-blue-100/70 text-xs leading-relaxed line-clamp-2">
-                        {project.description}
-                      </p>
-                   </div>
-                   
-                   <div className="mt-auto">
-                      <div className="flex flex-wrap gap-2 mb-6">
-                        {project.technologies?.slice(0, 3).map((tech, i) => (
-                          <span key={i} className="px-2.5 py-1 bg-transparent border border-white/10 shadow-[0_4px_24px_rgba(37,99,235,0.15)] hover:shadow-[0_8px_32px_rgba(37,99,235,0.4)] transition-all duration-300 text-[10px] font-bold rounded text-gray-200">{tech}</span>
-                        ))}
-                      </div>
-                      
-                      <span className="text-brand-primary font-bold text-sm inline-flex items-center">
-                        View Project <ArrowRight size={14} className="ml-1" />
-                      </span>
-                   </div>
-                 </div>
-              </CardWrapper>
-            );
-          })}
+            </div>
+          ))}
         </div>
       </Container>
     </section>

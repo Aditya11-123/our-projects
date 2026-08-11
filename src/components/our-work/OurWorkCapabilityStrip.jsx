@@ -4,7 +4,7 @@ import { Monitor, Smartphone, Database, TrendingUp } from 'lucide-react';
 
 export default function OurWorkCapabilityStrip() {
   const capabilities = [
-    { num: "03", title: "WEB", desc: "Projects", icon: <Monitor size={20} /> },
+    { num: "02", title: "WEB", desc: "Projects", icon: <Monitor size={20} /> },
     { num: "01", title: "MOBILE", desc: "Project", icon: <Smartphone size={20} /> },
     { num: "01", title: "BUSINESS SYSTEMS", desc: "Proposed Solution", icon: <Database size={20} /> },
     { num: "04", title: "DIGITAL GROWTH", desc: "Projects & Concepts", icon: <TrendingUp size={20} /> }

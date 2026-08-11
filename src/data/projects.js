@@ -11,21 +11,7 @@ const defaultProjects = [
     technologies: ["React", "Tailwind CSS", "Vite", "Framer Motion"],
     image: "/bdm-fresh.webp",
     featured: true,
-    externalLink: "https://bdmfresh.com/"
-  },
-  {
-    id: "ai-salon",
-    slug: "ai-salon",
-    title: "AI Salon",
-    category: "Web",
-    status: "internal",
-    type: "AI + Business Website",
-    shortDescription: "An AI-focused salon website concept demonstrating intelligent digital experiences.",
-    description: "An AI-focused salon website concept demonstrating how modern business websites can combine service presentation with intelligent digital experiences.",
-    technologies: ["React", "Node.js", "OpenAI API", "Tailwind CSS"],
-    image: "/ai-salon.webp",
-    featured: false,
-    externalLink: "https://ai-salon.webworks.co.ke/"
+    externalLink: "https://bdmfresh.com/NewWeb/"
   },
   {
     id: "tejas-investment-solutions",

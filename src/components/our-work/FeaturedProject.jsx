@@ -29,9 +29,20 @@ export default function FeaturedProject({ project }) {
                <span className="px-3 py-1.5 bg-transparent border border-white/10 shadow-[0_4px_24px_rgba(37,99,235,0.15)] hover:shadow-[0_8px_32px_rgba(37,99,235,0.4)] transition-all duration-300 text-xs font-medium rounded text-gray-200 shadow-sm">Node.js</span>
             </div>
             
-            <button className="text-brand-primary font-bold text-sm inline-flex items-center hover:text-brand-primaryHover transition-colors">
-              View Project <ArrowRight size={16} className="ml-2" />
-            </button>
+            {project.externalLink ? (
+              <a 
+                href={project.externalLink} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-brand-primary font-bold text-sm inline-flex items-center hover:text-brand-primaryHover transition-colors"
+              >
+                View Live Website <ArrowRight size={16} className="ml-2" />
+              </a>
+            ) : (
+              <button className="text-brand-primary font-bold text-sm inline-flex items-center hover:text-brand-primaryHover transition-colors">
+                View Project <ArrowRight size={16} className="ml-2" />
+              </button>
+            )}
           </div>
 
           <div className="lg:col-span-8">

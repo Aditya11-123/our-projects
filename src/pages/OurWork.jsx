@@ -21,7 +21,6 @@ export default function OurWork() {
   }, []);
 
   const bdmFresh = getProjectById('bdm-fresh');
-  const aiSalon = getProjectById('ai-salon');
   const tejas = getProjectById('tejas-investment-solutions');
   const cocktailAcademy = getProjectById('indian-cocktail-academy');
   const erpProposal = getProjectById('manufacturing-digital-transformation');
@@ -52,7 +51,7 @@ export default function OurWork() {
               transition={{ duration: 0.4, ease: "easeOut" }}
             >
               <FeaturedProject project={bdmFresh} />
-              <WebProjectsGrid projects={[aiSalon, tejas]} />
+              <WebProjectsGrid projects={[tejas]} />
             </motion.div>
           )}
 

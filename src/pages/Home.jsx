@@ -7,7 +7,6 @@ import ServicesPreview from '../components/home/ServicesPreview';
 import BusinessChallenges from '../components/home/BusinessChallenges';
 import Achievements from '../components/home/Achievements';
 import FeaturedProjects from '../components/home/FeaturedProjects';
-import CaseStudyPreview from '../components/home/CaseStudyPreview';
 import WhyChooseUs from '../components/home/WhyChooseUs';
 import EngineeringProcess from '../components/home/EngineeringProcess';
 import TechExpertise from '../components/home/TechExpertise';
@@ -32,7 +31,6 @@ export default function Home() {
       <ServicesPreview />
       <BusinessChallenges />
       <Achievements />
-      <CaseStudyPreview />
       <WhyChooseUs />
       <EngineeringProcess />
       <TechExpertise />

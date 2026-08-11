@@ -1,6 +1,3 @@
-import { GithubIcon, LinkedinIcon } from './SocialIcons';
-import { Mail } from 'lucide-react';
-
 export default function TeamCard({ member }) {
   return (
     <article className="bg-[#0B1018] border border-white/10 rounded-[18px] p-6 lg:p-8 flex flex-col items-center text-center overflow-hidden transition-all duration-300 hover:shadow-[0_4px_30px_rgba(37,99,235,0.15)] hover:-translate-y-1 hover:border-brand-primary/40 group h-full relative">
@@ -33,43 +30,8 @@ export default function TeamCard({ member }) {
       </p>
 
       {/* Focus areas */}
-      <div className="mt-auto mb-8 text-[11px] lg:text-[12px] font-bold tracking-widest uppercase text-gray-500 group-hover:text-brand-primary/80 transition-colors leading-loose">
+      <div className="mt-auto text-[11px] lg:text-[12px] font-bold tracking-widest uppercase text-gray-500 group-hover:text-brand-primary/80 transition-colors leading-loose">
         {member.focus}
-      </div>
-
-      {/* Social links footer */}
-      <div className="flex gap-4 pt-5 border-t border-white/5 w-full justify-center">
-        {member.githubUrl && (
-          <a
-            href={member.githubUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="text-gray-500 hover:text-brand-primary transition-colors"
-            aria-label={`${member.name} GitHub`}
-          >
-            <GithubIcon size={18} />
-          </a>
-        )}
-        {member.linkedinUrl && (
-          <a
-            href={member.linkedinUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="text-gray-500 hover:text-brand-primary transition-colors"
-            aria-label={`${member.name} LinkedIn`}
-          >
-            <LinkedinIcon size={18} />
-          </a>
-        )}
-        {member.emailUrl && (
-          <a
-            href={member.emailUrl}
-            className="text-gray-500 hover:text-brand-primary transition-colors"
-            aria-label={`Email ${member.name}`}
-          >
-            <Mail size={18} />
-          </a>
-        )}
       </div>
     </article>
   );
